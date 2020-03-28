@@ -8,14 +8,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    teamList:[],
-    teamUserList:[]
+    teamInfo:{
+      tavatarUrl:'',
+      ttitle:'',
+      tname:'',
+      ttel:''
+
+    },
+    memberList:[]
   },
   getTeamInfo(){
     const params={'tNo':'PQBhXlrYTicQAzOO2jSCGOCEFLsjhKAV'}
     getTeamInfo(params).then(res=>{
       this.setData({
-        teamList:res.data
+        [`teamInfo.tavatarUrl`]:res.data.tavatarUrl,
+        [`teamInfo.tname`]:res.data.tname,
+        [`teamInfo.ttitle`]:res.data.ttitle,
+        [`teamInfo.ttel`]:res.data.ttel,
       })
   })
 
@@ -24,7 +33,9 @@ getTeamUser(){
   const params={'tNo':'PQBhXlrYTicQAzOO2jSCGOCEFLsjhKAV'}
   getTeamUser(params).then(res=>{
     this.setData({
-      teamList:res.data
+      memberList:res.data,
+
+
     })
 })
 },
