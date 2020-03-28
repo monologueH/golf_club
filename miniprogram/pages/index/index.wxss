@@ -1,0 +1,55 @@
+.container{
+  background-color: #000;
+}
+.welcome{
+  color: #fff;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+.welcome text{
+  font-weight: 700;
+}
+.entranceSec{
+  display: flex;
+  justify-content: center;
+  padding-top: 40rpx;
+}
+.entranceColumn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.entranceColumn.column1{
+  padding-top:100rpx; 
+  margin-right: 30rpx;
+}
+.entranceColumn.column1{
+  padding-top:50rpx; 
+}
+.entranceItem{
+  background-color: #0f0f0f;
+  width:320rpx;
+  height: 350rpx;
+  margin-bottom: 50rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.entranceItem>image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.entranceItem>view{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  color: #dbdbdb;
+}
+.entranceItem.longItem{
+  height: 450rpx;
+}

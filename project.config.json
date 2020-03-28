@@ -1,0 +1,102 @@
+{
+	"description": "项目配置文件",
+	"miniprogramRoot": "miniprogram/",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.3",
+	"appid": "wx444408e7292547a6",
+	"projectname": "golf-life",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "创建比赛",
+					"pathName": "pages/createRace/createRace",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "pages/score/score",
+					"pathName": "pages/score/score",
+					"query": "gno=03G1Z6gJzw8PqHUE03lW4yPfm9T1Yf4A",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/playerList/playerList",
+					"pathName": "pages/playerList/playerList",
+					"query": "groupIndex=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/placeList/placeList",
+					"pathName": "pages/placeList/placeList",
+					"query": "groupIndex=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/raceList/raceList",
+					"pathName": "pages/raceList/raceList",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="welcome">
+  welcome, <text>周翰南</text>
+  </view>
+  <view class="entranceSec">
+    <view class="entranceColumn column1">
+      <view class="entranceItem" data-url="/pages/createRace/createRace" bindtap="jumpPage">
+          <image src="/assets/image/add.png"></image>
+          <view>创建比赛</view>
+      </view>
+      <view class="entranceItem" data-url="/pages/raceList/raceList" bindtap="jumpPage">
+          <image src="/assets/image/golf.png"></image>
+          <view>最近比赛</view>
+      </view>
+    </view>
+    <view class="entranceColumn column2">
+      <view class="entranceItem">
+          <image src="/assets/image/record_create.png"></image>
+          <view>我的成绩</view>
+      </view>
+      <view class="entranceItem longItem">
+          <image src="/assets/image/Golf Club.png"></image>
+          <view>我的球队</view>
+      </view>
+    </view>
+  </view>
+</view>

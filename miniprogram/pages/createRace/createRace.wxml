@@ -1,0 +1,71 @@
+<!--miniprogram/pages/createRace/createRace.wxml-->
+<view class="container">
+  <!-- <view class="container_title">创建比赛</view> -->
+  <mp-form ext-class="formPanel">
+    <view class="formTitle">基本信息</view>
+    <mp-cell ext-class="extCell">
+      <view>比赛名称</view>
+      <input class="darkInput" placeholder="请输入比赛名称" value="{{form.gName}}" slot="footer" data-name="gName" bindinput="bindFormChange"></input>
+    </mp-cell>
+    <mp-cell ext-class="extCell">
+      <view bindtap='selsectdate'>比赛日期</view>
+      <picker  slot="footer" data-name="gStartDate" mode="date" value="{{form.gStartDate}}" start="2015-09-01" bindchange="bindFormChange">
+        <input slot="footer" bindtap='selsectdate' type="text" name="date" id="date" placeholder="请选择日期" disabled='true' value="{{form.gStartDate}}"></input>
+      </picker>
+    </mp-cell>
+    
+    <mp-cell ext-class="extCell">
+      <view bindtap='selsectdate'>比赛时间</view>
+      <picker data-name="gStartTime" slot="footer" mode="time" value="{{form.gStartTime}}" bindchange="bindFormChange">
+        <input slot="footer" bindtap='selsectdate' type="text" name="date" id="time" placeholder="请选择时间" disabled='true' value="{{form.gStartTime}}"></input>
+      </picker>
+    </mp-cell>
+    <!-- 球场/球员 -->
+    <view class="formTitle">球场/球员</view>
+    <mp-cell ext-class="extCell" link bindtap="selectPlace">
+      <view bindtap='selsectdate'>球场</view>
+      <view class="cellFooter" slot="footer">
+      {{placeInfo.pName}}
+      <text wx:for="{{placeInfo.groundList}}">{{item}}</text>
+      </view>
+    </mp-cell>
+    <mp-slideview ext-class="attendPlayer" buttons="{{buttons}}" wx:for="{{groupList}}" wx:for-item="group" wx:for-index="groupIndex">
+      <view class="slideContent">
+        <view>{{group.ggName}}</view>
+        <view class="playerWrap">
+          <view class="playerItem" wx:for="1234">
+            <view class="imageWrap" wx:if="{{group.mNoList[index]}}">
+              <image src="/assets/image/Golf Club.png"></image>
+            </view>
+            <view wx:else class="addImgWrap" data-index="{{groupIndex}}" bindtap="addPlayer">
+              <image src="/assets/image/add.png"></image>
+            </view>
+            <view class="textWrap" wx:if="{{group.mNoList[index]}}">{{group.mNoList[index].mName}}</view>
+          </view>
+        </view>
+      </view>
+    </mp-slideview>
+    <view class="addGroup" bindtap="addGroup">
+        <image src="/assets/image/add.png"></image>
+        新增分组
+    </view>
+    <view class="formTitle">隐私设置</view>
+    <mp-cell ext-class="extCell">
+      <view bindtap='selsectdate'>私密比赛</view>
+      <view slot="footer">
+        <switch data-name="isPrivate" bindchange="bindFormChange" checked="{{form.isPrivate}}"></switch>
+      </view>
+    </mp-cell>
+    <mp-cell ext-class="extCell">
+      <view bindtap='selsectdate'>仅小队成员参加</view>
+      <view slot="footer">
+        <switch data-name="isOnlyGroup" bindchange="bindFormChange" checked="{{form.isOnlyGroup}}"></switch>
+      </view>
+    </mp-cell>
+  </mp-form>
+  <view class="btnGroup">
+    <button style="width:90%;" bindtap="createRace"> 创建比赛 </button>
+  </view>
+</view>
+
+

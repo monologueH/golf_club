@@ -1,0 +1,209 @@
+/* miniprogram/pages/score/score.wxss */
+.navTab{
+  display: flex;
+  justify-content: center;
+}
+.navTab .navTabItem{
+  color: #4c4c4c;
+  line-height: 120rpx;
+  /* background-color: #ccc; */
+  padding: 0 20rpx;
+  margin-right: 60rpx;
+}
+.navTab .navTabItem.active{
+  color: #fff;
+}
+.navTab .navTabItem:last-child{
+  margin-right: 0;
+}
+.contentPanel{
+  margin: 0 auto;
+  width: 700rpx;
+  height: 70vh;
+  background-color: #fff;
+  border-radius: 60rpx;
+  margin-top: 40rpx;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+  /* display: flex; */
+  overflow: auto;
+}
+.holePanel{
+
+}
+.scoreTitle{
+  width: 100%;
+  height: 80rpx;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  background-color: #222;
+  margin-bottom: 20rpx;
+  color: #fff;
+  box-shadow: 3rpx 3rpx 10rpx #212121;
+  text-align: center;
+  /* background-color: green; */
+}
+.scoreRow{
+  width: 90%;
+  margin: 0 auto;
+  height: 140rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20rpx;
+}
+.rowItem{
+  flex: 1;
+  display: flex;
+  /* border: 1rpx solid #ccc; */
+  background-color: #f6f6f6;
+  max-width: 300rpx;
+}
+.rowItem:nth-child(2){
+  margin-left: 20rpx;
+}
+.tableTitle{
+  width: 120rpx;
+  height: 100%;
+  /* background-color: red; */
+  /* border: 1rpx solid #ccc; */
+}
+.tableTitle view:first-child{
+  width: 70rpx;
+  height: 70rpx;
+  background-color: #000;
+  color: #fff;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+.tableTitle view:nth-child(2n){
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+.tableContent{
+  width: 150rpx;
+  height: 100%;
+  /* background-color: yellow; */
+  /* border: 1rpx solid #ccc; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  border-left: none;
+}
+.scoreDetail{
+  font-size: 50rpx;
+  font-weight: 700;
+  color: #4796eb;
+}
+.locationSelMask{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0,  0.3);
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.locationSelBox{
+  position: absolute;
+  left: 0;
+  bottom: -300px;
+  width: 100%;
+  border-radius: 20rpx;
+  overflow: hidden;
+  transition: bottom 10s ease-in;
+}
+.locationSelBox.show{
+  bottom: 0;
+}
+.locationSelBox .btnGroup{
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ccc;
+  font-size: 28rpx;
+  padding: 0 40rpx;
+  background-color: #fff;
+  z-index: 100;
+}
+.locationSelBox .btnGroup>view:last-child{
+  color: #b58e4a;
+}
+.selectionTitle{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  padding-bottom: 40rpx;
+  padding-top: 20rpx;
+}
+.selectionTitle view{
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  font-size: 36rpx;
+  color: #666;
+}
+/* .selectionTitle view:first-child{
+  text-align: right;
+} */
+.locationSel{
+  width: 100%;
+  height: 250rpx;
+  box-shadow: 3rpx 10rpx 10rpx #f1f1f1;
+  padding-bottom: 60rpx;
+  z-index: 100;
+  background-color: #fff;
+}
+.shotsSelItem{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shotsSelItem text{
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-left: 10rpx;
+}
+.locationSelItem{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.locationSelItem text{
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-left: 10rpx;
+}
+.lane image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.pickerIndicator{
+  height: 80rpx;
+  width: 100%;
+  background-color: rgba(210, 210, 210, 0.2);
+  box-shadow: 3rpx 10rpx 10rpx #f1f1f1;
+}
+.shim{
+  height: 100rpx;
+  width: 100%;
+  background-color: #fff;
+}

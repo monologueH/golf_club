@@ -1,0 +1,23 @@
+<!--miniprogram/pages/playerList/playerList.wxml-->
+<wxs src="../../utils/utils.wxs" module="tools" /> 
+<view class="searchSec">
+  <mp-search ext-class="search" placeholder="请输入好友微信名搜索" cancel="{{false}}"></mp-search>
+</view>
+<view class="playerList">
+  <view class="playerItem" wx:for="{{placeList}}" bindtap="selectPlace" data-index="{{index}}" data-item="{{item}}">
+    <view class="selector {{selectedIndex === index ? 'selected':''}}"></view>
+    <image src="/assets/image/Golf Club.png"></image>
+    <view>{{item.pName}}</view>
+  </view>
+</view>
+<view class="btnGroup">
+  <view class="halfPlace">
+    <view class="halfPlaceTitle">请选择场地(注意顺序):</view>
+    <view class="halfPlaceWrap">
+      <view wx:for="{{placeDetail}}" class="halfPlaceItem {{tools.fn(groundList, item.name).indexOf ? 'selected':''}}" data-item="{{item}}" bindtap="selectHalf">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+  <button style="width:90%;" bindtap="saveChanges"> 保存修改 </button>
+</view>

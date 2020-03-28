@@ -1,0 +1,125 @@
+/* miniprogram/pages/createRace/createRace.wxss */
+.container{
+  background-color: #010101;
+  overflow-x:hidden;
+}
+#date{
+  color: #ccc;
+}
+#time{
+  color: #ccc;
+}
+.playerWrap{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.playerItem:last-child{
+  margin-right: 0;
+}
+.playerItem{
+  /* margin-right: 20rpx; */
+  width: 100rpx;
+  padding: 0 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+.imageWrap{
+  width: 55rpx;
+  height: 55rpx;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imageWrap image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.addImgWrap{
+  width: 90rpx;
+  height: 90rpx;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addImgWrap image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.textWrap{
+  margin-top: 5rpx;
+  color: #ccc;
+  width: 140rpx;
+  overflow: hidden;
+  font-size: 20rpx;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  text-align: center;
+}
+.wx-switch-input{
+  /* background: #fff !important; */
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+  background: #010101 !important;
+  border: none;
+}
+.attendPlayer{
+  width: 700rpx;
+  color: #ccc;
+  padding: 20rpx 30rpx;
+  background-color: #222;
+  border-top: 1px solid #111;
+}
+.slideContent{
+  width: 700rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.attendPlayer .weui-slideview__btn{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addGroup{
+  height: 100rpx;
+  width: 100%;
+  background-color: #222;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #111;
+}
+.addGroup image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  margin-top: -3rpx;
+
+}
+.btnGroup{
+  width: 100%;
+  padding: 60rpx 0;
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* left: 0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnGroup button{
+  background-color: #DAA520;
+}
+.cellFooter{
+  color: #7d7d7d;
+  font-size: 28rpx;
+}

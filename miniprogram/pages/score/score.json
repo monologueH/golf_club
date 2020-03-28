@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#000000",
+  "backgroundColor": "#212121",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "计分板",
+  "usingComponents": {
+    
+  }
+}

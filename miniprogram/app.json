@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/createRace/createRace",
+    "pages/score/score",
+    "pages/playerList/playerList",
+    "pages/placeList/placeList",
+    "pages/raceList/raceList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#111",
+    "selectedColor": "#b58e4a",
+    "color": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "/assets/tabs/home.png",
+        "selectedIconPath": "/assets/tabs/home_select.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "/assets/tabs/personal.png",
+        "selectedIconPath": "/assets/tabs/personal_select.png",
+        "pagePath": "pages/logs/logs",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

@@ -1,0 +1,49 @@
+/* miniprogram/pages/playerList/playerList.wxss */
+.searchSec{
+  padding-top: 20rpx;
+}
+.search{
+  background-color: #010101 !important;
+}
+.playerList{
+  padding: 40rpx 0;
+}
+
+.playerItem{
+  background-color: #222;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  margin: 0 20rpx;
+  margin-bottom: 15rpx;
+}
+.playerItem .selector{
+  height: 120rpx;
+  width: 20rpx;
+  background-color: #ddd;
+}
+.playerItem .selector.selected{
+  background-color: green;
+}
+.playerItem image{
+  width: 60rpx;
+  height: 60rpx;
+  padding: 30rpx 30rpx;
+}
+.btnGroup{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnGroup button{
+  background-color: #DAA520;
+}
+.tips{
+  color: #ccc;
+  text-align: center;
+}

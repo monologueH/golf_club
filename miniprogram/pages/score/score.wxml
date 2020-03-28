@@ -1,0 +1,59 @@
+<!--miniprogram/pages/score/score.wxml-->
+<view class="navTab">
+  <view wx:for="{{tabList}}" class="navTabItem {{currentTabIndex === index?'active':''}}" wx:for-item="item" wx:for-index="index" data-index="{{index}}" bindtap="navClick">{{item.name}}</view>
+</view>
+<view class="contentPanel">
+  <view class="holePanel" wx:for="{{holeDetail}}"  wx:for-item="placeItem" wx:for-index="placeIndex">
+    <view class="scoreTitle">{{placeItem.name}} 场</view>
+    <view class="scoreRow" wx:for="{{placeItem.holeList}}">
+      <view class="rowItem" wx:for="{{item}}" wx:for-item="scoreItem" wx:for-index="scoreIndex" data-item="{{scoreItem}}" bindtap="showScorePanel">
+        <view class="tableTitle">
+          <view>{{placeItem.name + (index*2+scoreIndex+1)}}</view>
+          <view>{{scoreItem.num}}</view>
+        </view>
+        <view class="tableContent">
+          <view wx:if="{{scoreItem.gs > 0}}" class="scoreDetail" style="">{{scoreItem.gs}}</view>
+          <view wx:else>点击计分</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="locationSelMask" wx:if="{{showSel}}">
+  <view class="locationSelBox {{showSel?'show':''}}">
+    <view class="btnGroup">
+      <view bindtap="cancelSel">取消</view>
+      <view bindtap="confirmSel">确认</view>
+    </view>
+    <!-- <view class="selectionTitle">
+      <view>杆数</view>
+      <view>推杆</view>
+      <view>罚杆</view>
+      <view>沙地</view>
+      <view>球道</view>
+    </view> -->
+    <picker-view class="locationSel" indicator-class="pickerIndicator" value="{{scoreInfo}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{shots}}" class="shotsSelItem">
+          {{item.namecn}}
+          <text> {{item.value}}</text>
+        </view>
+      </picker-view-column>
+      <!-- <picker-view-column>
+        <view wx:for="{{pushList}}" class="locationSelItem">{{item.value}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{penalty}}" class="locationSelItem">{{item.value}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{placeFeature}}" class="locationSelItem">{{item.value}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{lanes}}" class="locationSelItem lane">
+          <image src="{{item.iconUrl}}"></image>
+        </view>
+      </picker-view-column> -->
+    </picker-view>
+    <view wx:if="{{showSel}}" class="shim"></view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<!--miniprogram/pages/raceList/raceList.wxml-->
+<view class="container">
+  <view class="banner">
+    <image mode="widthFix" src="/assets/image/golfBag.jpg"></image>
+  </view>
+  <view class="raceList">
+    <view class="raceItem" wx:for="{{raceList}}" data-item="{{item}}" bindtap="jump2Score">
+      <view class="leftBox" style="background-color:{{labelColor[index]}};">
+        {{index + 1}}
+      </view>
+      <view class="rightBox">
+        <view class="raceRow">比赛名称：{{item.gname}}</view>
+        <view class="raceRow">比赛时间：{{item.gstartDate}}</view>
+        <view class="raceRow">比赛地点：{{item.gplaceInfo.pName}}</view>     
+      </view>
+    </view>
+  </view>
+</view>

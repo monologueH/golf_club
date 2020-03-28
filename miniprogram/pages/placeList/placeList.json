@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#000000",
+  "backgroundColor": "#212121",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "球场列表",
+  "usingComponents": {
+    "mp-search": "../../miniprogram_npm/weui-miniprogram/searchbar/searchbar"
+  }
+}
