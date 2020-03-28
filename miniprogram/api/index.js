@@ -25,3 +25,6 @@ export function getScoreInfo(payload) {
 export function markScore(payload) {
   return baseRequest("/golf/g-game-group-user-score/markScore", payload, "POST");
 }
+export function getMsgList(payload) {
+  return baseRequest("/golf/g-message/getMessageByMNo", payload, "GET");
+}

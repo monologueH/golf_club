@@ -10,3 +10,6 @@ function baseRequest(path, payload, method) {
 export function getPlayerList(payload) {
   return baseRequest("/golf/g-wx-user/getUserList", payload, "get");
 }
+export function getUserDetail(payload) {
+  return baseRequest("/golf/g-wx-user/getGWxUserByMNo", payload, "get");
+}

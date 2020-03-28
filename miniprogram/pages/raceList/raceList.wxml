@@ -9,9 +9,9 @@
         {{index + 1}}
       </view>
       <view class="rightBox">
-        <view class="raceRow">比赛名称：{{item.gname}}</view>
-        <view class="raceRow">比赛时间：{{item.gstartDate}}</view>
-        <view class="raceRow">比赛地点：{{item.gplaceInfo.pName}}</view>     
+        <view class="raceRow">比赛名称：{{item.gName}}</view>
+        <view class="raceRow">比赛时间：{{item.gStartDate}}</view>
+        <view class="raceRow">比赛地点：{{item.gPlaceInfoJSON.pName}}</view>     
       </view>
     </view>
   </view>

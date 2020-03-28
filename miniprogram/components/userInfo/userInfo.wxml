@@ -1,0 +1,31 @@
+<!--components/userInfo/userInfo.wxml-->
+<view class="userInfo">
+  <image mode="widthFix" class="cardBg" src="/assets/image/card_bg.jpeg"></image>
+  <view class="cardTop">
+    <view class="avatar">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="mName">
+      欢迎你 , {{userInfo.mName}} 
+      <text style="margin-left:20rpx;">{{'(管理员)'}}</text>
+    </view>
+  </view>
+  <view class="cardBottom">
+    <view class="cardBottom-row">
+      <view class="cardBottom-title">太平洋卡号</view>
+      <text class="cardBottom-content">{{userInfo.mOther.tpylmCode}}</text>
+    </view>
+    <view class="cardBottom-row">
+      <view class="cardBottom-title">衣服尺码</view>
+      <text class="cardBottom-content">{{userInfo.mOther.shoeSize}}</text>
+    </view>
+    <view class="cardBottom-row">
+      <view class="cardBottom-title">裤子尺码</view>
+      <text class="cardBottom-content">{{userInfo.mOther.trouserSize}}</text>
+    </view>
+    <view class="cardBottom-row">
+      <view class="cardBottom-title">鞋子尺码</view>
+      <text class="cardBottom-content">{{userInfo.mOther.shoeSize}}</text>
+    </view>
+  </view>
+</view>

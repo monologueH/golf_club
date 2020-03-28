@@ -6,7 +6,8 @@
     "pages/score/score",
     "pages/playerList/playerList",
     "pages/placeList/placeList",
-    "pages/raceList/raceList"
+    "pages/raceList/raceList",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,7 +18,7 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "backgroundColor": "#111",
+    "backgroundColor": "#040507",
     "selectedColor": "#b58e4a",
     "color": "#fff",
     "borderStyle": "black",
@@ -31,7 +32,7 @@
       {
         "iconPath": "/assets/tabs/personal.png",
         "selectedIconPath": "/assets/tabs/personal_select.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/my/my",
         "text": "我的"
       }
     ]

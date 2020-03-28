@@ -1,0 +1,10 @@
+<!--components/authPopup/authPopup.wxml-->
+<view class="authPopup">
+  <view class="authPanel">
+    <view class="authTitle">{{title}}</view>
+    <view class="btnGroup">
+      <button  bindtap="clickAuth">取消</button>
+      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">登录</button>
+    </view>
+  </view>
+</view>

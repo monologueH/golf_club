@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "user-info": "/components/userInfo/userInfo",
+    "mp-cell": "../../miniprogram_npm/weui-miniprogram/cell/cell",
+    "mp-badge": "../../miniprogram_npm/weui-miniprogram/badge/badge"
+  },
+  "navigationBarBackgroundColor": "#122137",
+  "backgroundColor": "#212121",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的"
+}

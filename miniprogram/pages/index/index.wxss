@@ -1,5 +1,47 @@
 .container{
-  background-color: #000;
+  /* background-color: #000; */
+  position: relative;
+}
+.messageBox{
+  height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  position: relative;
+  /* overflow-x: scroll; */
+}
+.msgWrap{
+  /* min-width: 750rpx; */
+  /* width: 1000rpx; */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.msgItem{
+  /* min-width: 100vw; */
+  color: #ccc;
+  line-height: 80rpx;
+  display: inline-block;
+  align-items: center;
+  padding: 0 70rpx;
+  /* padding-right: 100vw; */
+  box-sizing: border-box;
+  font-size: 28rpx;
+  position: relative;
+}
+.msgItem image{
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+}
+.homeContent{
+  z-index: 100;
+}
+.homeBg{
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 .welcome{
   color: #fff;
@@ -14,7 +56,7 @@
 .entranceSec{
   display: flex;
   justify-content: center;
-  padding-top: 40rpx;
+  padding-top: 80rpx;
 }
 .entranceColumn{
   display: flex;

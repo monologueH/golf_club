@@ -13,20 +13,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData()
   },
   jump2Score(e){
     const {item} = e.currentTarget.dataset
     console.log(item)
     wx.navigateTo({
-      url: `/pages/score/score?gno=${item.gno}`,
+      url: `/pages/score/score?gno=${item.gNo}`,
     })
   },
   getData(){
     getGameList().then(res=>{
-      const raceList = res.data.forEach(item=>{
-        item.gplaceInfo = JSON.parse(item.gplaceInfo)
-      })
+      // const raceList = res.data.forEach(item=>{
+      //   item.gplaceInfo = item.gPlaceInfoJSON
+      // })
       this.setData({
         raceList:res.data
       })
@@ -45,7 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData()
   },
 
   /**

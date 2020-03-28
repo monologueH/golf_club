@@ -52,8 +52,13 @@ Page({
       gPlaceNo: this.data.placeInfo.pNo,
       gPlaceInfoJSON:this.data.placeInfo
     }
+    result.gStartDate = `${result.gStartDate} ${result.gStartTime}:00`
     console.log(result)
-    createGame(result)
+    // createGame(result).then(res=>{
+    //   wx.redirectTo({
+    //     url: '/pages/raceList/raceList',
+    //   })
+    // })
   },
   selectPlace(){
     wx.navigateTo({

@@ -1,0 +1,33 @@
+<!--pages/my/my.wxml-->
+<view class="cardSection">
+  <view class="cardBg"></view>
+  <user-info id="userInfo"></user-info>
+</view>
+
+<mp-cell ext-class="personItem" link>
+  <view>
+    消息通知
+    <mp-badge content="100" style="margin-left:10rpx;"></mp-badge>
+  </view>
+</mp-cell>
+<mp-cell ext-class="personItem" link>
+  <view>
+    关于
+  </view>
+</mp-cell>
+
+<view class="userToolsTitle">工具与服务</view>
+<view class="userTools">
+  <view class="userToolsItem">
+    <view class="imgBox">
+      <image src='/assets/image/Note.png' style="width:50rpx;height:50rpx;"></image>
+    </view>
+    <view>比赛补录</view>
+  </view>
+  <view class="userToolsItem">
+    <view class="imgBox">
+      <image src='/assets/image/message.png' style="width:55rpx;height:55rpx;"></image>
+    </view>
+    <view>发布消息</view>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+/* components/authPopup/authPopup.wxss */
+.authPopup{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.authPanel{
+  width: 500rpx;
+  height: 250rpx;
+  background-color: #fff;
+  margin-top: -200rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.authTitle{
+  width: 400rpx;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  padding-bottom: 10rpx;
+}
+.btnGroup{
+  margin-bottom: 40rpx;
+  display: flex;
+  justify-content: center;
+}
+.btnGroup button:first-child{
+  width: 150rpx;
+  background-color: #ccc;
+  border-radius: 5rpx;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.btnGroup button:last-child{
+  width: 250rpx;
+  background-color: #57bf6a;
+  border-radius: 5rpx;
+  color: #fff;
+}
