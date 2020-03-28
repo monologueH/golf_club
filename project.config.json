@@ -30,7 +30,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.10.3",
 	"appid": "wx444408e7292547a6",
-	"projectname": "golf-life",
+	"projectname": "golf_club",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -94,6 +94,12 @@
 					"name": "pages/raceList/raceList",
 					"pathName": "pages/raceList/raceList",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myTeam/myTeam",
+					"pathName": "pages/myTeam/myTeam",
 					"scene": null
 				}
 			]

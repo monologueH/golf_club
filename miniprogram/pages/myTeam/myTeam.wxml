@@ -1,0 +1,18 @@
+<!--miniprogram/pages/myTeam/myTeam.wxml-->
+<view class="team">
+  <image mode="widthFix" class="bg" src='/assets/image/teamBg.jpg'></image>
+    <view class="teamIcon">
+		<view class="pic">
+			<image></image>
+		</view>
+		<view class="name">杆杆入洞</view>
+
+    <view class="slogn">标语：天下无敌，gogogo</view>
+    		<view class="col">
+			<view class="code"> 人数：18</view>
+      <view class="line"></view>
+			<view class="phone">电话：1390000111</view>
+		</view>
+	</view>
+
+</view>
