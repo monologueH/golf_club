@@ -1,0 +1,32 @@
+<!--miniprogram/pages/myTeam/myTeam.wxml-->
+<view class="con">
+	<view class="all">
+		<view class="team">
+			<image mode="widthFix" class="bg" src='/assets/image/bg1.jpg'></image>
+			<view class="teamIcon">
+				<view class="pic">
+					<image src='{{teamInfo.tavatarUrl}}'></image>
+				</view>
+				<view class="name">{{teamInfo.tname}}</view>
+
+				<view class="slogn" wx:if="{{teamInfo.ttitle !=''}}">标语：{{teamInfo.ttitle}}</view>
+				<view class="col">
+					<view class="phone">电话：{{teamInfo.ttel}}</view>
+					<view class="line"></view>
+					<view class="code"> 人数：{{memberList.length}}</view>
+				</view>
+			</view>
+
+		</view>
+	</view>
+
+	<view class="userList">
+		<view class='box' wx:for="{{memberList}}" data-index="{{index}}" data-item="{{item}}">
+			<view>
+				<image src="{{item.avatarUrl}}"></image>
+			</view>
+			<view class='username'>{{item.mname}}</view>
+		</view>
+
+	</view>
+</view>

@@ -7,7 +7,8 @@
     "pages/playerList/playerList",
     "pages/placeList/placeList",
     "pages/raceList/raceList",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/myTeam/myTeam"
   ],
   "window": {
     "backgroundTextStyle": "light",
