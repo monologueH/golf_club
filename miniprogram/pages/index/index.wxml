@@ -30,7 +30,7 @@
           <image src="/assets/image/record_create.png"></image>
           <view>我的成绩</view>
         </view> -->
-        <view class="entranceItem longItem">
+        <view class="entranceItem longItem" data-url="/pages/myTeam/myTeam" bindtap="jumpPage">
           <image src="/assets/image/Golf Club.png"></image>
           <view>我的球队</view>
         </view>

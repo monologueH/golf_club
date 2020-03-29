@@ -24,9 +24,10 @@ Page({
     const query = wx.createSelectorQuery();
     query.select('.msgWrap').boundingClientRect((rect)=> {
       console.log(rect.width)
-      const duration = rect.width * 10
+      const speed = 10;
+      const duration = rect.width * speed
       let animationLeft = wx.createAnimation({
-        duration: rect.width * 10,
+        duration: rect.width * speed,
         timingFunction: 'linear',
         delay: 0
       }) 
@@ -46,7 +47,7 @@ Page({
           textLeftAnimation: animationLeft.export()
         });
         animationLeft.left(-this.data.wrapWidth).step({
-          duration:this.data.wrapWidth * 10
+          duration:this.data.wrapWidth * speed
         })
         this.setData({
           textLeftAnimation: animationLeft.export()
