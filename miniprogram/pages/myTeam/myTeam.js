@@ -33,12 +33,18 @@ getTeamUser(){
   const params={'tNo':'PQBhXlrYTicQAzOO2jSCGOCEFLsjhKAV'}
   getTeamUser(params).then(res=>{
     this.setData({
-      memberList:res.data,
-
-
+      memberList:res.data
     })
 })
 },
+toDetails(e){
+  var mNo=e.currentTarget.dataset.item.mno
+  wx.navigateTo({
+    url: `/pages/memberDetails/memberDetails?mNo=${mNo}`,
+  })
+
+},
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -19,3 +19,6 @@ export function getTeamInfo(payload) {
 export function getTeamUser(payload) {
   return baseRequest("/golf/g-team-user/getGTeamUserList", payload, "get");
 }
+export function getMemberDetails(payload) {
+  return baseRequest("/golf/g-wx-user/getUserPublicInfo", payload, "get");
+}

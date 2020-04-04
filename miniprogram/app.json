@@ -8,7 +8,8 @@
     "pages/placeList/placeList",
     "pages/raceList/raceList",
     "pages/my/my",
-    "pages/myTeam/myTeam"
+    "pages/myTeam/myTeam",
+    "pages/memberDetails/memberDetails"
   ],
   "window": {
     "backgroundTextStyle": "light",

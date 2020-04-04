@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#1e1d1d",
+  "backgroundColor": "#f1f1f1",
+  "backgroundTextStyle":"light",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "GOLF-LIFE",
+  "usingComponents": {}
+}

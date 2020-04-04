@@ -1,0 +1,42 @@
+<!--miniprogram/pages/memberDetails/memberDetails.wxml-->
+<view class="top">
+	<view class="header">
+		<!-- <image src="/assets/image/infoBg.jpg" mode="widthFix"></image> -->
+	</view>
+	<view class="info">
+		<!-- <view class="bg"></view> -->
+		<view class="card">
+			<view class="avatar">
+				<image src='{{detailList.avatarUrl}}'></image>
+
+			</view>
+			<view class="nameList">
+				<view class="name">{{detailList.mName}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="details">
+	<view class="col">
+		<text>生日：</text>
+		<view>{{detailList.mOther.birthday.info}}</view>
+	</view>
+
+	<view class="col">
+		<text>衣服尺码：</text>
+		<view>{{detailList.mOther.clothesSize.info}}</view>
+	</view>
+	<view class="col">
+		<text>裤子尺码：</text>
+		<view>{{detailList.mOther.trouserSize.info}}</view>
+	</view>
+
+	<view class="col">
+		<text>   手套尺码：</text>
+		<view>{{detailList.mOther.gloveSize.info}}</view>
+	</view>
+	<view class="col">
+		<text>鞋子尺码：</text>
+		<view>{{detailList.mOther.shoeSize.info}}</view>
+	</view>
+</view>

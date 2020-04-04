@@ -102,6 +102,12 @@
 					"pathName": "pages/my/my",
 					"query": "gno=03G1Z6gJzw8PqHUE03lW4yPfm9T1Yf4A",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/memberDetails/memberDetails",
+					"pathName": "pages/memberDetails/memberDetails",
+					"scene": null
 				}
 			]
 		}

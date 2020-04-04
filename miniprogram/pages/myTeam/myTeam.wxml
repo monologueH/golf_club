@@ -21,7 +21,7 @@
 	</view>
 
 	<view class="userList">
-		<view class='box' wx:for="{{memberList}}" data-index="{{index}}" data-item="{{item}}">
+		<view class='box' wx:for="{{memberList}}" data-index="{{index}}" data-item="{{item}}"wx:key="index" bindtap="toDetails">
 			<view>
 				<image src="{{item.avatarUrl}}"></image>
 			</view>
