@@ -1,27 +1,16 @@
 <mp-form ext-class="formPanel">
-  <view class="formTitle">基本信息</view>
-  <mp-cell ext-class="extCell" link>
-    <view>昵称</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑昵称" value="{{form.gName}}" slot="footer" data-name="gName" bindinput="bindFormChange"></input>
+  <!-- <view class="formTitle">基本信息</view> -->
+  <mp-cell ext-class="extCell">
+    <input class="darkInput" focus="{{true}}" placeholder="请点击编辑昵称" value="{{value}}" confirm-type="done" data-name="value" bindinput="bindFormChange" bindconfirm="onConfirm"></input>
   </mp-cell>
-  <mp-cell ext-class="extCell" link>
-    <view>生日</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑生日" value="{{form.gName}}" slot="footer" data-name="gName" bindinput="bindFormChange"></input>
+  <mp-cell ext-class="extCell">
+    <view>是否隐藏</view>
+    <view slot="footer">
+      <switch data-name="isPublic" bindchange="bindFormChange" checked="{{isPublic}}"></switch>
+    </view>
   </mp-cell>
-  <mp-cell ext-class="extCell" link>
-    <view>上衣尺码</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑上衣尺码" value="{{form.gName}}" slot="footer" data-name="gName" bindinput="bindFormChange"></input>
-  </mp-cell>
-  <mp-cell ext-class="extCell" link>
-    <view>裤子尺码</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑裤子尺码" value="{{form.gName}}" slot="footer" data-name="gName" bindinput="bindFormChange"></input>
-  </mp-cell>
-  <mp-cell ext-class="extCell" link>
-    <view>鞋子尺码</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑鞋子尺码" value="{{form.gName}}" slot="footer" data-name="gName" bindinput="bindFormChange"></input>
-  </mp-cell>
-  <mp-cell ext-class="extCell" link>
-    <view>手套尺码</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑手套尺码" value="{{form.gName}}" slot="footer" data-name="gName" bindinput="bindFormChange"></input>
-  </mp-cell>
+  <view class="btnGroup">
+    <button bindtap="onCancel">取消</button>
+    <button bindtap="onConfirm" type="primary">保存</button>
+  </view>
 </mp-form>

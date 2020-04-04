@@ -104,10 +104,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 6,
+					"name": "pages/myInfo/myInfo",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
 					"name": "pages/editMy/editMy",
 					"pathName": "pages/editMy/editMy",
-					"query": "",
+					"query": "name=username",
 					"scene": null
 				}
 			]

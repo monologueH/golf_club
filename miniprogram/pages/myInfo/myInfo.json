@@ -3,7 +3,7 @@
   "backgroundColor": "#212121",
   "backgroundTextStyle": "light",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "编辑",
+  "navigationBarTitleText": "个人信息",
   "usingComponents": {
     "mp-form": "../../miniprogram_npm/weui-miniprogram/form/form",
     "mp-toptips": "../../miniprogram_npm/weui-miniprogram/toptips/toptips",

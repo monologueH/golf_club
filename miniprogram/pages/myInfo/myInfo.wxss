@@ -13,15 +13,3 @@ page{
 .extCell{
   background-color: #fff;
 }
-/* .btnGroup button{
-  background-color: #152135;
-} */
-.btnGroup{
-  padding: 40rpx 40rpx;
-  display: flex;
-  justify-content: space-between;
-}
-.btnGroup button:first-child{
-  background-color: #fff;
-  margin-right: 40rpx;
-}
