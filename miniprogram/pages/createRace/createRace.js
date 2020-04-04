@@ -54,11 +54,11 @@ Page({
     }
     result.gStartDate = `${result.gStartDate} ${result.gStartTime}:00`
     console.log(result)
-    // createGame(result).then(res=>{
-    //   wx.redirectTo({
-    //     url: '/pages/raceList/raceList',
-    //   })
-    // })
+    createGame(result).then(res=>{
+      wx.redirectTo({
+        url: '/pages/raceList/raceList',
+      })
+    })
   },
   selectPlace(){
     wx.navigateTo({

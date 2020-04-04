@@ -1,0 +1,27 @@
+/* miniprogram/pages/editMy/editMy.wxss */
+page{
+  background-color: #f7f7f7;
+  /* padding-top: 40rpx; */
+}
+.formPanel{
+  background-color: #fff;
+}
+.formTitle{
+  padding: 10rpx 30rpx;
+  background-color: #fff;
+}
+.extCell{
+  background-color: #fff;
+}
+/* .btnGroup button{
+  background-color: #152135;
+} */
+.btnGroup{
+  padding: 40rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.btnGroup button:first-child{
+  background-color: #fff;
+  margin-right: 40rpx;
+}

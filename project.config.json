@@ -104,11 +104,25 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/memberDetails/memberDetails",
-					"pathName": "pages/memberDetails/memberDetails",
+					"id": 6,
+					"name": "pages/myInfo/myInfo",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
 					"scene": null
-				}
+				},
+				{
+					"id": 7,
+					"name": "pages/editMy/editMy",
+					"pathName": "pages/editMy/editMy",
+					"query": "name=username",
+					"scene": null
+			},{
+				"id": -1,
+				"name": "pages/memberDetails/memberDetails",
+				"pathName": "pages/memberDetails/memberDetails",
+				"query": "",
+				"scene": null
+			}
 			]
 		}
 	}

@@ -1,0 +1,15 @@
+/* miniprogram/pages/editMy/editMy.wxss */
+page{
+  background-color: #f7f7f7;
+  /* padding-top: 40rpx; */
+}
+.formPanel{
+  background-color: #fff;
+}
+.formTitle{
+  padding: 10rpx 30rpx;
+  background-color: #fff;
+}
+.extCell{
+  background-color: #fff;
+}

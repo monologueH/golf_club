@@ -3,7 +3,12 @@
   <view class="cardBg"></view>
   <user-info id="userInfo"></user-info>
 </view>
-
+<mp-cell ext-class="personItem" link>
+  <view bindtap="jumpPage" data-url="/pages/myInfo/myInfo">
+    编辑个人资料
+    <!-- <mp-badge content="100" style="margin-left:10rpx;"></mp-badge> -->
+  </view>
+</mp-cell>
 <mp-cell ext-class="personItem" link>
   <view>
     消息通知

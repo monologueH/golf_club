@@ -9,7 +9,9 @@
     "pages/raceList/raceList",
     "pages/my/my",
     "pages/myTeam/myTeam",
-    "pages/memberDetails/memberDetails"
+    "pages/memberDetails/memberDetails",
+    "pages/myInfo/myInfo",
+    "pages/editMy/editMy"
   ],
   "window": {
     "backgroundTextStyle": "light",

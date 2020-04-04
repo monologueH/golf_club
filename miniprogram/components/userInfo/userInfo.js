@@ -30,6 +30,8 @@ Component({
           userInfo:res.data
         })
         console.log(this.data.userInfo)
+        app.globalData.userInfo = res.data;
+        console.log(app.globalData)
       })
     },
     setNavColor() {
