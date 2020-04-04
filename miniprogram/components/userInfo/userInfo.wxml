@@ -12,20 +12,20 @@
   </view>
   <view class="cardBottom">
     <view class="cardBottom-row">
-      <view class="cardBottom-title">太平洋卡号</view>
-      <text class="cardBottom-content">{{userInfo.mOther.tpylmCode}}</text>
+      <view class="cardBottom-title">手套尺码</view>
+      <text class="cardBottom-content">{{userInfo.mOther.clothesSize.info}}</text>
     </view>
     <view class="cardBottom-row">
-      <view class="cardBottom-title">衣服尺码</view>
-      <text class="cardBottom-content">{{userInfo.mOther.shoeSize}}</text>
+      <view class="cardBottom-title">上衣尺码</view>
+      <text class="cardBottom-content">{{userInfo.mOther.clothesSize.info}}</text>
     </view>
     <view class="cardBottom-row">
       <view class="cardBottom-title">裤子尺码</view>
-      <text class="cardBottom-content">{{userInfo.mOther.trouserSize}}</text>
+      <text class="cardBottom-content">{{userInfo.mOther.trouserSize.info}}</text>
     </view>
     <view class="cardBottom-row">
       <view class="cardBottom-title">鞋子尺码</view>
-      <text class="cardBottom-content">{{userInfo.mOther.shoeSize}}</text>
+      <text class="cardBottom-content">{{userInfo.mOther.shoeSize.info}}</text>
     </view>
   </view>
 </view>

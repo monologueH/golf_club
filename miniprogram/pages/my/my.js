@@ -8,7 +8,17 @@ Page({
   data: {
     
   },
-
+  jumpPage(e) {
+    const url = e.currentTarget.dataset.url;
+    wx.navigateTo({
+      url,
+    })
+  },
+  getuserInfo(){
+    const userInfo = this.selectComponent('#userInfo');
+    userInfo.getUserData();
+  
+  },
   /**
    * 生命周期函数--监听页面加载
    */

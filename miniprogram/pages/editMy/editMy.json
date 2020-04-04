@@ -1,0 +1,16 @@
+{
+  "navigationBarBackgroundColor": "#122137",
+  "backgroundColor": "#212121",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "mp-form": "../../miniprogram_npm/weui-miniprogram/form/form",
+    "mp-toptips": "../../miniprogram_npm/weui-miniprogram/toptips/toptips",
+    "mp-cells": "../../miniprogram_npm/weui-miniprogram/cells/cells",
+    "mp-cell": "../../miniprogram_npm/weui-miniprogram/cell/cell",
+    "mp-checkbox": "../../miniprogram_npm/weui-miniprogram/checkbox/checkbox",
+    "mp-checkbox-group": "../../miniprogram_npm/weui-miniprogram/checkbox-group/checkbox-group",
+    "mp-slideview": "../../miniprogram_npm/weui-miniprogram/slideview/slideview"
+  }
+}
