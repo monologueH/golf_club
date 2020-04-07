@@ -16,7 +16,7 @@ Page({
     const {data} = await getMsgList()
     console.log(data)
     this.setData({
-      infoList: data
+      infoList: data.slice((data.length - 2) > 0 ? (data.length - 2):0,data.length)
     })
     this.initInfoAnimation();
   },

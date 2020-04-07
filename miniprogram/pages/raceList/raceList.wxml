@@ -5,7 +5,7 @@
   </view>
   <view class="raceList">
     <view class="raceItem" wx:for="{{raceList}}" data-item="{{item}}" bindtap="jump2Score">
-      <view class="leftBox" style="background-color:{{labelColor[index]}};">
+      <view class="leftBox" style="background-color:{{labelColor[item.gStatus]}};">
         {{index + 1}}
       </view>
       <view class="rightBox">

@@ -12,7 +12,7 @@
 </view>
 <view class="btnGroup">
   <view class="halfPlace">
-    <view class="halfPlaceTitle">请选择场地(注意顺序):</view>
+    <view class="halfPlaceTitle">请选择洞数:</view>
     <view class="halfPlaceWrap">
       <view wx:for="{{placeDetail}}" class="halfPlaceItem {{tools.fn(groundList, item.name).indexOf ? 'selected':''}}" data-item="{{item}}" bindtap="selectHalf">
         {{item.name}}

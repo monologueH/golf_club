@@ -9,7 +9,7 @@
     <!-- <mp-badge content="100" style="margin-left:10rpx;"></mp-badge> -->
   </view>
 </mp-cell>
-<mp-cell ext-class="personItem" link>
+<mp-cell ext-class="personItem" link bindtap="jumpPage" data-url="/pages/sendMsg/sendMsg?mode=view">
   <view>
     消息通知
     <mp-badge content="100" style="margin-left:10rpx;"></mp-badge>
@@ -29,7 +29,7 @@
     </view>
     <view>比赛补录</view>
   </view>
-  <view class="userToolsItem">
+  <view class="userToolsItem" bindtap="jumpPage" data-url="/pages/sendMsg/sendMsg?mode=edit">
     <view class="imgBox">
       <image src='/assets/image/message.png' style="width:55rpx;height:55rpx;"></image>
     </view>

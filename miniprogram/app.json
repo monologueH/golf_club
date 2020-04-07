@@ -11,7 +11,9 @@
     "pages/myTeam/myTeam",
     "pages/memberDetails/memberDetails",
     "pages/myInfo/myInfo",
-    "pages/editMy/editMy"
+    "pages/editMy/editMy",
+    "components/allScorePanel/allScorePanel",
+    "pages/sendMsg/sendMsg"
   ],
   "window": {
     "backgroundTextStyle": "light",

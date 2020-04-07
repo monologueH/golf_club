@@ -116,13 +116,14 @@
 					"pathName": "pages/editMy/editMy",
 					"query": "name=username",
 					"scene": null
-			},{
-				"id": -1,
-				"name": "pages/memberDetails/memberDetails",
-				"pathName": "pages/memberDetails/memberDetails",
-				"query": "",
-				"scene": null
-			}
+				},
+				{
+					"id": -1,
+					"name": "pages/sendMsg/sendMsg",
+					"pathName": "pages/sendMsg/sendMsg",
+					"query": "name=username",
+					"scene": null
+				}
 			]
 		}
 	}

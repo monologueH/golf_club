@@ -1,0 +1,54 @@
+/* miniprogram/pages/sendMsg/sendMsg.wxss */
+page{
+  background-color: #f7f7f7;
+}
+.sendMsg{
+  width: 750vw;
+  height: 100vh;
+  background-color: #fff;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  color: #26282F;
+}
+.msgBox{
+  width: 100vw;
+  flex: 1;
+}
+.otherMsg{
+  width: 500rpx;
+  font-size: 28rpx;
+  background-color: #eeebee;
+  border-radius:40rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+  margin-top: 40rpx;
+}
+.btnGroup{
+  background-color: #fff;
+  /* background-color: red; */
+  height: 150rpx;
+  width: 100vw;
+  /* position: absolute; */
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding-top: 40rpx;
+}
+.btnGroup input{
+  background-color: #eeebf0;
+  width: 550rpx;
+  height: 88rpx;
+  padding: 10rpx 40rpx;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+  text-indent: 20rpx;
+  font-size: 28rpx;
+}
+.btnGroup image{
+  width: 88rpx;
+  height: 88rpx;
+  margin-left: 40rpx;
+}

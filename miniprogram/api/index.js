@@ -28,3 +28,10 @@ export function markScore(payload) {
 export function getMsgList(payload) {
   return baseRequest("/golf/g-message/getMessageByMNo", payload, "GET");
 }
+export function sendMsg(payload){
+  return baseRequest("/golf/g-message/saveMessage", payload, "POST");
+  
+}
+export function getAllScore(payload) {
+  return baseRequest("/golf/g-game-group-user-score/getScoreList", payload, "GET");
+}

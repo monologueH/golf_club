@@ -2,9 +2,9 @@
 <view class="navTab">
   <view wx:for="{{tabList}}" class="navTabItem {{currentTabIndex === index?'active':''}}" wx:for-item="item" wx:for-index="index" data-index="{{index}}" bindtap="navClick">{{item.name}}</view>
 </view>
-<view class="contentPanel">
-  <view class="holePanel" wx:for="{{holeDetail}}"  wx:for-item="placeItem" wx:for-index="placeIndex">
-    <view class="scoreTitle">{{placeItem.name}} 场</view>
+<view wx:if="{{currentTabIndex === 0}}" class="contentPanel">
+  <view class="holePanel" wx:for="{{holeDetail}}" wx:for-item="placeItem" wx:for-index="placeIndex">
+    <view class="scoreTitle">{{HOLE_MAP[placeItem.name]}}</view>
     <view class="scoreRow" wx:for="{{placeItem.holeList}}">
       <view class="rowItem" wx:for="{{item}}" wx:for-item="scoreItem" wx:for-index="scoreIndex" data-item="{{scoreItem}}" bindtap="showScorePanel">
         <view class="tableTitle">
@@ -12,12 +12,15 @@
           <view>{{scoreItem.num}}</view>
         </view>
         <view class="tableContent">
-          <view wx:if="{{scoreItem.gs > 0}}" class="scoreDetail" style="">{{scoreItem.gs}}</view>
+          <view wx:if="{{scoreItem.gs > 0}}" class="scoreDetail {{scoreItem.gs > scoreItem.num ? 'bad' : ''}} {{scoreItem.gs < scoreItem.num ? 'good' : ''}}" style="">{{scoreItem.gs}}</view>
           <view wx:else>点击计分</view>
         </view>
       </view>
     </view>
   </view>
+</view>
+<view wx:if="{{currentTabIndex === 1}}" class="AllScorePanel">
+  <allScorePanel gNo="{{gNo}}"></allScorePanel>
 </view>
 <view class="locationSelMask" wx:if="{{showSel}}">
   <view class="locationSelBox {{showSel?'show':''}}">
@@ -25,24 +28,25 @@
       <view bindtap="cancelSel">取消</view>
       <view bindtap="confirmSel">确认</view>
     </view>
-    <!-- <view class="selectionTitle">
-      <view>杆数</view>
-      <view>推杆</view>
-      <view>罚杆</view>
+    <view class="selectionTitle">
+      <view>标准杆</view>
+      <view>得分</view>
+      <!-- <view>罚杆</view>
       <view>沙地</view>
-      <view>球道</view>
-    </view> -->
+      <view>球道</view> -->
+    </view>
     <picker-view class="locationSel" indicator-class="pickerIndicator" value="{{scoreInfo}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{standardList}}" class="locationSelItem">{{item.value}}</view>
+      </picker-view-column>
       <picker-view-column>
         <view wx:for="{{shots}}" class="shotsSelItem">
           {{item.namecn}}
           <text> {{item.value}}</text>
         </view>
       </picker-view-column>
+
       <!-- <picker-view-column>
-        <view wx:for="{{pushList}}" class="locationSelItem">{{item.value}}</view>
-      </picker-view-column>
-      <picker-view-column>
         <view wx:for="{{penalty}}" class="locationSelItem">{{item.value}}</view>
       </picker-view-column>
       <picker-view-column>

@@ -1,6 +1,6 @@
 // miniprogram/pages/score/score.js
-import { genScoreList } from './shots.js'
-import { getGameDetail, getScoreInfo, markScore } from '../../api/index.js'
+import { genScoreList, standard } from './shots.js'
+import { getGameDetail, getScoreInfo, markScore, getAllScore } from '../../api/index.js'
 import { getPlaceDetail } from '../../api/place.js'
 
 Page({
@@ -14,6 +14,12 @@ Page({
       { name: '所有成绩', value: 'allScore' },
       { name: '游戏规则', value: 'gameRule' },
     ],
+    HOLE_MAP:{
+      A: '1-9洞',
+      B: '10-18洞',
+      C: '18-27洞',
+      D: '28-36洞',
+    },
     showSel: false,
     scoreInfo: [],
     shots: [],
@@ -22,46 +28,27 @@ Page({
     placeFeature: [],
     gameDetail: null,
     scoreDetail: null,
-    currentHole: null
+    currentHole: null,
+    standardList: standard
   },
-  // initPushList(result){
-  //   const pushList = [];
-  //   for (let i = 0; i <= result[0]; i++) {
-  //     pushList.push({ value: i })
-  //   }
-  //   const penalty=[], placeFeature=[]
-  //   for (let i = 0; i <= (result[0]-result[1]); i++) {
-  //     penalty.push({ value: i })
-  //     placeFeature.push({value:i})
-  //   }
-  //   this.setData({
-  //     pushList,
-  //     penalty,
-  //     placeFeature
-  //   })
-  // },
   showScorePanel(e) {
     const { item } = e.currentTarget.dataset
     console.log(item.num)
-    // this.initPushList([item.num,0,0,0,0]);
     const shots = genScoreList(item.num);
     this.setData({
       showSel: true,
-      // currentStandard:item.value || 4,
       shots,
-      scoreInfo: [item.num - 1],
+      scoreInfo: [item.num ? (item.num - 1) : 0, item.gs ? item.gs - 1 : 0],
       currentHole: item
     })
   },
   bindChange(e) {
     const val = e.detail.value;
     console.log(val)
-    // if (val[0] !== this.data.provinceIndex) {
-    //   this.getCities(this.data.province[val[0]].provincecode);
-    // }
-    // this.initPushList(val);
+    const shots = genScoreList(val[0] + 1);
     this.setData({
-      scoreInfo: val
+      scoreInfo: val,
+      shots
     });
   },
   navClick(e) {
@@ -81,7 +68,7 @@ Page({
       sType: 1
     }
     console.log(params)
-    markScore(params).then(res=>{
+    markScore(params).then(res => {
       this.getScoreInfo()
     })
   },
@@ -96,19 +83,20 @@ Page({
     // 兼容小程序返回空的bug
     if (this.data.scoreInfo.length === 0) {
       this.setData({
-        scoreInfo: [0],
+        scoreInfo: [0, 0],
       });
     }
     this.markScore({
       "scoreReq": {
-        "gs": this.data.scoreInfo[0] + 1
+        standardPoleCount: this.data.scoreInfo[0] + 1,
+        gs: this.data.scoreInfo[1] + 1
       }
     });
     this.setData({
       showSel: false, //控制弹窗隐藏显示
     });
   },
-  getScoreInfo(){
+  getScoreInfo() {
     getScoreInfo({ gNo: this.data.gNo }).then(res => {
       const holeDetail = res.data.scoreVoList.map(item => {
         item.holeList = item.holeList.reduce((t, c, i) => {
@@ -142,10 +130,9 @@ Page({
     const gno = options.gno;
     console.log(gno)
     this.setData({
-      gNo:gno
+      gNo: gno
     })
     this.init()
-
   },
 
   /**

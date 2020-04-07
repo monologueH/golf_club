@@ -10,6 +10,14 @@ Component({
   created(){
     this.getUserData();
   },
+  pageLifetimes: {
+    // 组件所在页面的生命周期函数
+    show: function () { 
+      this.getUserData();
+    },
+    hide: function () { },
+    resize: function () { },
+  },
   attached() {
     // this.setNavColor();
     // this.getUserData();

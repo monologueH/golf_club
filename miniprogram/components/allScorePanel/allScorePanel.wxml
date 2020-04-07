@@ -1,0 +1,20 @@
+<!--components/allScorePanel/allScorePanel.wxml-->
+<view class="allScore">
+  <view class="userColumn" wx:for-item="user" wx:for-item="user" wx:for-index="userIndex">
+    <view class="tableExplain">
+      <view class="tri1"></view>
+      <view class="content1">用户名</view>
+      <view class="content2">标准杆</view>
+    </view>
+    <view class="scoreTitleItem" wx:for="{{scoreInfo[0].scoreVoListNew}}">
+      <view>第{{index + 1}}洞</view>
+      <view>{{item.num}}</view>
+    </view>
+  </view>
+  <view class="userColumn" wx:for="{{scoreInfo}}" wx:for-item="user" wx:for-item="user">
+    <view class="userName">{{user.userRes.mName}}</view>
+    <view class="scoreItem {{item.gs > item.num?'bad':''}} {{item.gs < item.num && item.gs!== 0?'good':''}}" wx:for="{{user.scoreVoListNew}}">
+      {{item.gs}}
+    </view>
+  </view>
+</view>

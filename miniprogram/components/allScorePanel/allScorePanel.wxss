@@ -1,0 +1,104 @@
+/* components/allScorePanel/allScorePanel.wxss */
+.allScore{
+  width: 750rpx;
+  overflow-x: scroll;
+  /* background-color: #212121; */
+}
+.userColumn{
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  
+  padding: 0 20rpx;
+}
+.tableExplain{
+  width: 300rpx;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #ccc;
+  border-right: 1rpx solid #444;
+  border-bottom: 1rpx solid #444;
+  background-color: #212121;
+  flex-basis: 250rpx;
+  flex-shrink: 0;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  /* justify-content: center;   */
+}
+.tableExplain .content1{
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+  font-size: 24rpx;
+}
+.tableExplain .content2{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  font-size: 24rpx;
+}
+.tri1{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400rpx;
+  height: 1rpx;
+  background-color: #444;
+  transform: translate(-50rpx,70rpx) rotateZ(25deg);
+}
+.userName{
+  width: 300rpx;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #ccc;
+  border-right: 1rpx solid #444;
+  border-bottom: 1rpx solid #444;
+  background-color: #212121;
+  flex-basis: 250rpx;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.scoreTitleItem{
+  width: 150rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-right: 1rpx solid #444;
+  border-bottom: 1rpx solid #444;
+  background-color: #212121;
+  flex-basis: 120rpx;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.scoreTitleItem view:first-child{
+  color: #ccc;
+  font-size: 28rpx;
+}
+.scoreItem{
+  width: 150rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: #fff; */
+  font-size: 50rpx;
+  border-right: 1rpx solid #444;
+  border-bottom: 1rpx solid #444;
+  background-color: #212121;
+  flex-basis: 120rpx;
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: #4796eb;
+}
+.scoreItem.good{
+  color: #67ac5c;
+}
+.scoreItem.bad{
+  color: #e15241;
+}

@@ -1,6 +1,7 @@
 .container{
   /* background-color: #000; */
   position: relative;
+  overflow: hidden;
 }
 .messageBox{
   height: 80rpx;
@@ -69,7 +70,10 @@
   margin-right: 30rpx;
 }
 .entranceColumn.column1{
-  padding-top:50rpx; 
+  padding-top:70rpx; 
+}
+.entranceColumn.column2{
+  padding-top:40rpx; 
 }
 .entranceItem{
   background-color: #0f0f0f;
