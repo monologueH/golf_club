@@ -9,7 +9,7 @@
     </mp-cell>
     <mp-cell ext-class="extCell">
       <view bindtap='selsectdate'>比赛日期</view>
-      <picker  slot="footer" data-name="gStartDate" mode="date" value="{{form.gStartDate}}" start="2015-09-01" bindchange="bindFormChange">
+      <picker  slot="footer" data-name="gStartDate" mode="date" start="{{dateToday}}" value="{{form.gStartDate}}" bindchange="bindFormChange">
         <input slot="footer" bindtap='selsectdate' type="text" name="date" id="date" placeholder="请选择日期" disabled='true' value="{{form.gStartDate}}"></input>
       </picker>
     </mp-cell>
@@ -26,21 +26,21 @@
       <view bindtap='selsectdate'>球场</view>
       <view class="cellFooter" slot="footer">
       {{placeInfo.pName}}
-      <text wx:for="{{placeInfo.groundList}}">{{item}}</text>
+      <text wx:if="{{placeInfo.groundList}}">{{placeInfo.groundList.length<=2?'18洞':'36洞'}}</text>
       </view>
     </mp-cell>
-    <mp-slideview ext-class="attendPlayer" buttons="{{buttons}}" wx:for="{{groupList}}" wx:for-item="group" wx:for-index="groupIndex">
+    <mp-slideview bindbuttontap="bindbuttontap" data-index="{{groupIndex}}" ext-class="attendPlayer" buttons="{{buttons}}" wx:for="{{groupList}}" wx:for-item="group" wx:for-index="groupIndex">
       <view class="slideContent">
         <view>{{group.ggName}}</view>
         <view class="playerWrap">
           <view class="playerItem" wx:for="1234">
-            <view class="imageWrap" wx:if="{{group.mNoList[index]}}">
-              <image src="/assets/image/Golf Club.png"></image>
+            <view bindtap="addPlayer" data-index="{{groupIndex}}" class="imageWrap" wx:if="{{group.mNoList[index]}}">
+              <image src="{{group.mNoList[index].avatarUrl}}"></image>
             </view>
             <view wx:else class="addImgWrap" data-index="{{groupIndex}}" bindtap="addPlayer">
               <image src="/assets/image/add.png"></image>
             </view>
-            <view class="textWrap" wx:if="{{group.mNoList[index]}}">{{group.mNoList[index].mName}}</view>
+            <!-- <view class="textWrap" wx:if="{{group.mNoList[index]}}">{{group.mNoList[index].mName}}</view> -->
           </view>
         </view>
       </view>

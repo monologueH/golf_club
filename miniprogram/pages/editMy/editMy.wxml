@@ -1,7 +1,19 @@
 <mp-form ext-class="formPanel">
   <!-- <view class="formTitle">基本信息</view> -->
-  <mp-cell ext-class="extCell">
+  <mp-cell wx:if="{{type === 'input'}}" ext-class="extCell">
     <input class="darkInput" focus="{{true}}" placeholder="请点击编辑昵称" value="{{value}}" confirm-type="done" data-name="value" bindinput="bindFormChange" bindconfirm="onConfirm"></input>
+  </mp-cell>
+  <mp-cell wx:elif="{{type === 'datePicker'}}" ext-class="extCell">
+    <view>请选择日期</view>
+    <picker slot="footer" mode="date" data-name="value" value="{{value}}" bindchange="bindFormChange">
+      <input slot="footer" type="text" name="value" id="date" placeholder="请选择日期" disabled='true' value="{{value}}"></input>
+    </picker>
+  </mp-cell>
+    <mp-cell wx:elif="{{type === 'clothSize' || type === 'shoeSize'}}" ext-class="extCell">
+    <view>请选择尺码</view>
+    <picker slot="footer" range="{{pickerList}}" mode="selector" data-name="value" value="{{value}}" bindchange="bindFormChange">
+      <input slot="footer" type="text" name="value" id="date" placeholder="请选择尺码" disabled='true' value="{{value}}"></input>
+    </picker>
   </mp-cell>
   <mp-cell ext-class="extCell">
     <view>是否隐藏</view>

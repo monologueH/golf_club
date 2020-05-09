@@ -22,8 +22,9 @@ Page({
   },
   openEdit(e){
     const name = e.currentTarget.dataset.name;
+    const type = e.currentTarget.dataset.type || 'input';
     wx.navigateTo({
-      url: `/pages/editMy/editMy?name=${name}`,
+      url: `/pages/editMy/editMy?name=${name}&type=${type}`,
     })
     console.log(name)
   },

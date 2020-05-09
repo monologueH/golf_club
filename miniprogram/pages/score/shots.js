@@ -16,12 +16,12 @@ export const shots = [
   },
 ]
 export const standard = [
-  {
-    value: 1
-  },
-  {
-    value: 2
-  },
+  // {
+  //   value: 1
+  // },
+  // {
+  //   value: 2
+  // },
   {
     value: 3
   },
@@ -34,15 +34,15 @@ export const standard = [
   {
     value: 6
   },
-  {
-    value: 7
-  },
-  {
-    value: 8
-  },
-  {
-    value: 9
-  },
+  // {
+  //   value: 7
+  // },
+  // {
+  //   value: 8
+  // },
+  // {
+  //   value: 9
+  // },
 ]
 export const lanes = [{
     iconUrl: '/assets/image/Arrow up.png',
@@ -66,24 +66,24 @@ export const lanes = [{
   },
 ]
 export function genScoreList(standard = 4) {
-  if(!standard) standard = 1;
+  if(!standard) standard = 4;
   const needShots = shots.slice(0, standard).reverse();
   console.log(needShots)
   const result = [];
-  for (let i = 0; i < (standard + 14); i++) {
+  for (let i = 0; i < (standard + 6); i++) {
     if (standard > 5) {
       result.push({
-        value: i + 1
+        value: i + 1 - standard
       })
     } else if (i < standard) {
       result.push({
         ...needShots[i],
-        value: i + 1
+        value: i + 1 - standard
       })
     } else {
       result.push({
         namecn: '柏忌',
-        value: i + 1
+        value: i + 1 - standard
       })
     }
   }

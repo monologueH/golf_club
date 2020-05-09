@@ -7,13 +7,14 @@ Page({
    */ 
   data: {
     form:{
-      gStartDate: '2020-03-23',
+      gStartDate: new Date().toLocaleDateString().replace(/\//g, "-"),
       gStartTime:'00:00',
       isPrivate:false,
       isOnlyGroup:false,
       // 比赛类型
       gType:0
     },
+    dateToday: new Date().toLocaleDateString().replace(/\//g, "-"),
     placeInfo:{},
     groupList:[
       {
@@ -29,6 +30,19 @@ Page({
         extClass:'slideDel'
       }
     ]
+  },
+  bindbuttontap(e){
+    console.log(e)
+    const {index:btnIndex} = e.detail
+    const {index:groupIndex} = e.currentTarget.dataset
+    console.log(btnIndex,groupIndex)
+    if(btnIndex === 0){
+      if(this.data.groupList.length <=1) return;
+      this.data.groupList.splice(groupIndex,1);
+      this.setData({
+        groupList:this.data.groupList
+      })
+    }
   },
   createRace(){
     console.log(this.data.form)
@@ -53,7 +67,30 @@ Page({
       gPlaceInfoJSON:this.data.placeInfo
     }
     result.gStartDate = `${result.gStartDate} ${result.gStartTime}:00`
+    const varifyList = [
+      {
+        name: 'gName',
+        title: "请输入比赛名称!",
+      },
+      {
+        name:'gPlaceNo',
+        title: "请选择球场信息!",
+      },
+      {
+        name:'gJoinCount',
+        title:"请至少选择一个参赛人员!"
+      }
+    ]
     console.log(result)
+    for(let i = 0;i < varifyList.length;i++){
+      if (!result[varifyList[i].name]) {
+        wx.showToast({
+          title: varifyList[i].title,
+          icon: "none"
+        });
+        return;
+      }
+    }
     createGame(result).then(res=>{
       wx.redirectTo({
         url: '/pages/raceList/raceList',
@@ -108,7 +145,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(new Date().toLocaleDateString().replace(/\//g,"-"))
   },
 
   /**

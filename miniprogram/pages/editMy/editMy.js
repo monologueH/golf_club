@@ -1,7 +1,8 @@
 // miniprogram/pages/editMy/editMy.js
 import { editUserDetail } from '../../api/player.js'
 const app = getApp();
-
+const clothSizeList = ['XS', 'S', 'L', 'XL', 'XXL', 'XXXL'];
+const shoeSizeList = ['34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47',];
 Page({
 
   /**
@@ -10,7 +11,9 @@ Page({
   data: {
     name:null,
     value:null,
-    isPublic: false
+    isPublic: false,
+    type:'input',
+    pickerList:[]
   },
 
   /**
@@ -18,8 +21,20 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      name:options.name
+      name:options.name,
+      type:options.type || "input"
     })
+    console.log(options.type)
+    if (options.type === 'clothSize'){
+      
+      this.setData({
+        pickerList: clothSizeList
+      })
+    } else if (options.type === 'shoeSize') {
+      this.setData({
+        pickerList: shoeSizeList
+      })
+    }
     const info = app.globalData.userInfo.mOther[options.name];
     if (info){
       this.setData({
@@ -29,9 +44,17 @@ Page({
     }
   },
   bindFormChange(e){
+    console.log(e)
     const name = e.currentTarget.dataset.name;
+    console.log(name)
+    let value = e.detail.value;
+    if(this.data.type === 'clothSize'){
+      value = clothSizeList[parseInt(e.detail.value)];
+    } else if (this.data.type === 'shoeSize'){
+      value = shoeSizeList[parseInt(e.detail.value)];
+    }
     this.setData({
-      [name]: e.detail.value
+      [name]: value
     })
   },
   onCancel(){

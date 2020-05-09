@@ -29,16 +29,16 @@
 
 }
 .imageWrap{
-  width: 55rpx;
-  height: 55rpx;
+  width: 90rpx;
+  height: 90rpx;
   border: 1px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .imageWrap image{
-  width: 50rpx;
-  height: 50rpx;
+  width: 90rpx;
+  height: 90rpx;
 }
 .addImgWrap{
   width: 90rpx;

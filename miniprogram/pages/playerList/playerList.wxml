@@ -5,7 +5,7 @@
 <view class="playerList">
   <view class="playerItem" wx:for="{{playerList}}" bindtap="selectPlayer" data-index="{{index}}" wx:key="index">
     <view class="selector {{item.isSelected ? 'selected':''}}"></view>
-    <image src="/assets/image/Golf Club.png"></image>
+    <image src="{{item.avatarUrl}}"></image>
     <view>{{item.mName}}</view>
   </view>
   <view class="tips" wx:if="{{playerList.length <= 0}}">暂无可选择球员~</view>

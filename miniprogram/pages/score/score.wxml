@@ -12,8 +12,8 @@
           <view>{{scoreItem.num}}</view>
         </view>
         <view class="tableContent">
-          <view wx:if="{{scoreItem.gs > 0}}" class="scoreDetail {{scoreItem.gs > scoreItem.num ? 'bad' : ''}} {{scoreItem.gs < scoreItem.num ? 'good' : ''}}" style="">{{scoreItem.gs}}</view>
-          <view wx:else>点击计分</view>
+          <view class="scoreDetail {{scoreItem.gs > 0 ? 'bad' : ''}} {{scoreItem.gs < 0 ? 'good' : ''}}" style="">{{scoreItem.gs}}</view>
+          <!-- <view wx:else>点击计分</view> -->
         </view>
       </view>
     </view>

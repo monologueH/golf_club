@@ -11,8 +11,8 @@
 
 				<view class="slogn" wx:if="{{teamInfo.ttitle !=''}}">标语：{{teamInfo.ttitle}}</view>
 				<view class="col">
-					<view class="phone">电话：{{teamInfo.ttel}}</view>
-					<view class="line"></view>
+					<!-- <view class="phone">电话：{{teamInfo.ttel}}</view>
+					<view class="line"></view> -->
 					<view class="code"> 人数：{{memberList.length}}</view>
 				</view>
 			</view>

@@ -13,8 +13,10 @@ page{
 }
 .msgBox{
   width: 100vw;
-  flex: 1;
+  height: calc(100% - 200rpx);
+  overflow: auto;
 }
+
 .otherMsg{
   width: 500rpx;
   font-size: 28rpx;
@@ -30,6 +32,7 @@ page{
   height: 150rpx;
   width: 100vw;
   /* position: absolute; */
+  position: fixed;
   left: 0;
   bottom: 0;
   display: flex;

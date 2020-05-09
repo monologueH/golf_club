@@ -2,15 +2,19 @@
 //获取应用实例
 import { getAuth, getMsgList } from "../../api/index.js";
 const app = getApp();
-
+let timer = null;
 Page({
   data: {
     infoList:[],
     textLeftAnimation:{}
   },
   onLoad: function () {
-    // app.getAuth()
-    this.getMsg();
+    app.noImgGetAuth(()=>{
+      this.getMsg();
+    })
+  },
+  onShow(){
+    // this.getMsg();
   },
   async getMsg(){
     const {data} = await getMsgList()
@@ -23,38 +27,40 @@ Page({
   initInfoAnimation(){
     const query = wx.createSelectorQuery();
     query.select('.msgWrap').boundingClientRect((rect)=> {
-      console.log(rect.width)
       const speed = 10;
-      const duration = rect.width * speed
+      const screenWidth = wx.getSystemInfoSync().windowWidth;
+      let duration = (rect.width + screenWidth) * speed
       let animationLeft = wx.createAnimation({
-        duration: rect.width * speed,
         timingFunction: 'linear',
         delay: 0
       }) 
-      animationLeft.left(-rect.width).step();
-      // that.setData({
-      //   height: rect.width + 'px'
-      // })
       this.setData({
-        textLeftAnimation: animationLeft.export(),
         wrapWidth: rect.width
       })
-      setInterval(() => { 
-        animationLeft.left("750rpx").step({
-          duration:0
-        })
-        this.setData({
-          textLeftAnimation: animationLeft.export()
-        });
-        animationLeft.left(-this.data.wrapWidth).step({
-          duration:this.data.wrapWidth * speed
-        })
-        this.setData({
-          textLeftAnimation: animationLeft.export()
-        })
+      this.textMoveAnimation(animationLeft, duration);
+      if(timer){
+        clearInterval(timer)
+      }
+      console.log(duration)
+      timer = setInterval(() => {
+        this.textMoveAnimation(animationLeft, duration);
       }, duration)
     }).exec();
-    
+  },
+  // 文字移动动画
+  textMoveAnimation(animationLeft,duration){
+    animationLeft.left("750rpx").step({
+      duration: 0
+    })
+    this.setData({
+      textLeftAnimation: animationLeft.export()
+    });
+    animationLeft.left(-this.data.wrapWidth + 'px').step({
+      duration
+    })
+    this.setData({
+      textLeftAnimation: animationLeft.export()
+    })
   },
   jumpPage(e){
     const url = e.currentTarget.dataset.url;

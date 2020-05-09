@@ -14,7 +14,7 @@
   <view class="halfPlace">
     <view class="halfPlaceTitle">请选择洞数:</view>
     <view class="halfPlaceWrap">
-      <view wx:for="{{placeDetail}}" class="halfPlaceItem {{tools.fn(groundList, item.name).indexOf ? 'selected':''}}" data-item="{{item}}" bindtap="selectHalf">
+      <view wx:for="{{existGroundList}}" class="halfPlaceItem {{index === currentHoleNumIndex ? 'selected':''}}" data-index="{{index}}" data-item="{{item}}" bindtap="selectHalf">
         {{item.name}}
       </view>
     </view>

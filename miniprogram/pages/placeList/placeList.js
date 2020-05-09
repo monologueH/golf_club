@@ -9,30 +9,25 @@ Page({
   data: {
     placeList:[],
     selectedIndex: 0,
-ist:[],
     placeDetail:[],
-    groundList:[]
+    existGroundList:[],
+    currentHoleNumIndex:0,
+    groundList:['A','B']
 
   },
   selectHalf(e){
-    const {item} = e.currentTarget.dataset;
-    const currentIndex = this.data.groundList.indexOf(item.name);
-    let groundList;
-    if (currentIndex > -1){
-      this.data.groundList.splice(currentIndex,1);
-    }else {
-      if(this.data.groundList.length >= 2) {
-        wx.showToast({
-          icon: 'none',
-          title: '只能选择两个场地',
-        })
-        return
-      }
-      this.data.groundList = [...this.data.groundList, item.name];
+    const {item,index} = e.currentTarget.dataset;
+    let tmpList = [];
+    if(index === 0){
+      tmpList = ['A', 'B']
+    }else{
+      this.data.placeDetail.forEach(item=>{
+        tmpList.push(item.name)
+      })
     }
-    console.log(groundList)
     this.setData({
-      groundList: this.data.groundList
+      groundList: tmpList,
+      currentHoleNumIndex:index
     })
   },
   
@@ -67,10 +62,37 @@ ist:[],
   getPlaceList(){
     getPlaceList().then(res=>{
       const placeList = res.data;
+      console.log(placeList)
       this.setData({
         placeList,
         placeDetail:res.data[0].pOtherDetail.placeList
       })
+      this.setHoleNum(res.data[0].pOtherDetail.placeList)
+    })
+  },
+  setHoleNum(placeDetail){
+    let currentList = [];
+    if(placeDetail.length >=4){
+      currentList = [
+        {
+          name:'18洞',
+          groundList:['A','B']
+        },
+        {
+          name: '36洞',
+          groundList: ['C', 'D']
+        }
+      ]
+    }else{
+      currentList = [
+        {
+          name: '18洞',
+          groundList: ['A', 'B']
+        }
+      ]
+    }
+    this.setData({
+      existGroundList:currentList
     })
   },
   /**

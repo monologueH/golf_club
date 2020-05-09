@@ -6,22 +6,22 @@
   </mp-cell>
   <mp-cell ext-class="extCell" link>
     <view>生日</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑生日" value="{{otherInfo.birthday.info}}" slot="footer" bindtap="openEdit" data-name="birthday"></input>
+    <input class="darkInput" disabled="false" placeholder="请点击编辑生日" value="{{otherInfo.birthday.info}}" data-type="datePicker" slot="footer" bindtap="openEdit" data-name="birthday"></input>
   </mp-cell>
   <mp-cell ext-class="extCell" link>
     <view>上衣尺码</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑上衣尺码" value="{{otherInfo.clothesSize.info}}" slot="footer" bindtap="openEdit" data-name="clothesSize"></input>
+    <input class="darkInput" disabled="false" placeholder="请点击编辑上衣尺码" value="{{otherInfo.clothesSize.info}}" data-type="clothSize" slot="footer" bindtap="openEdit" data-name="clothesSize"></input>
   </mp-cell>
   <mp-cell ext-class="extCell" link>
     <view>裤子尺码</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑裤子尺码" value="{{otherInfo.trouserSize.info}}" slot="footer" bindtap="openEdit" data-name="trouserSize"></input>
+    <input class="darkInput" disabled="false" placeholder="请点击编辑裤子尺码" value="{{otherInfo.trouserSize.info}}" data-type="clothSize" slot="footer" bindtap="openEdit" data-name="trouserSize"></input>
   </mp-cell>
   <mp-cell ext-class="extCell" link>
     <view>鞋子尺码</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑鞋子尺码" value="{{otherInfo.shoeSize.info}}" slot="footer" bindtap="openEdit" data-name="shoeSize"></input>
+    <input class="darkInput" disabled="false" placeholder="请点击编辑鞋子尺码" value="{{otherInfo.shoeSize.info}}" slot="footer" data-type="shoeSize" bindtap="openEdit" data-name="shoeSize"></input>
   </mp-cell>
   <mp-cell ext-class="extCell" link>
     <view>手套尺码</view>
-    <input class="darkInput" disabled="false" placeholder="请点击编辑手套尺码" value="{{otherInfo.gloveSize.info}}" slot="footer" bindtap="openEdit" data-name="gloveSize"></input>
+    <input class="darkInput" disabled="false" placeholder="请点击编辑手套尺码" value="{{otherInfo.gloveSize.info}}" data-type="clothSize" slot="footer" bindtap="openEdit" data-name="gloveSize"></input>
   </mp-cell>
 </mp-form>

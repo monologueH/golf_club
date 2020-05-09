@@ -35,17 +35,18 @@ Page({
     const { item } = e.currentTarget.dataset
     console.log(item.num)
     const shots = genScoreList(item.num);
+    console.log(item.num)
     this.setData({
       showSel: true,
       shots,
-      scoreInfo: [item.num ? (item.num - 1) : 0, item.gs ? item.gs - 1 : 0],
+      scoreInfo: [item.num ? (item.num - 3) : 0, item.gs + item.num - 1],
       currentHole: item
     })
   },
   bindChange(e) {
     const val = e.detail.value;
     console.log(val)
-    const shots = genScoreList(val[0] + 1);
+    const shots = genScoreList(standard[val[0]].value);
     this.setData({
       scoreInfo: val,
       shots
@@ -75,7 +76,7 @@ Page({
   cancelSel() {
     this.setData({
       showSel: false //控制弹窗隐藏显示
-    });
+    }); 
   },
   confirmSel() {
     let cityStr;
@@ -86,10 +87,11 @@ Page({
         scoreInfo: [0, 0],
       });
     }
+    console.log(this.data.shots[this.data.scoreInfo[1]].value)
     this.markScore({
       "scoreReq": {
-        standardPoleCount: this.data.scoreInfo[0] + 1,
-        gs: this.data.scoreInfo[1] + 1
+        standardPoleCount: standard[this.data.scoreInfo[0]].value,
+        gs: this.data.shots[this.data.scoreInfo[1]].value
       }
     });
     this.setData({
