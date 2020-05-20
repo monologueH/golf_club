@@ -22,6 +22,9 @@
 <view wx:if="{{currentTabIndex === 1}}" class="AllScorePanel">
   <allScorePanel gNo="{{gNo}}"></allScorePanel>
 </view>
+<view wx:if="{{currentTabIndex === 2}}" class="AllScorePanel">
+  <gameRulePanel gNo="{{gNo}}"></gameRulePanel>
+</view>
 <view class="locationSelMask" wx:if="{{showSel}}">
   <view class="locationSelBox {{showSel?'show':''}}">
     <view class="btnGroup">

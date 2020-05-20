@@ -5,6 +5,7 @@
   "navigationBarTextStyle": "white",
   "navigationBarTitleText": "计分板",
   "usingComponents": {
-    "allScorePanel": "../../components/allScorePanel/allScorePanel"
+    "allScorePanel": "../../components/allScorePanel/allScorePanel",
+    "gameRulePanel": "../../components/gameRulePanel/gameRulePanel"
   }
 }

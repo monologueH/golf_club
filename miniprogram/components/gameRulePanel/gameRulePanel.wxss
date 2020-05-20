@@ -1,0 +1,43 @@
+/* components/gameRulePanel/gameRulePanel.wxss */
+.rulePanel{
+  color: #fff;
+}
+.rowTitle{
+  padding: 20rpx 30rpx;
+  font-weight: 700;
+  font-size: 28rpx;
+  /* text-align: center; */
+  /* background-color: #212121; */
+}
+.ruleSelect{
+  background-color: #222222;
+}
+.ruleSetup{
+  background-color: #222222;
+}
+.rowContent{
+  background-color: #222222!important;
+}
+.btnGroup{
+  width: 100%;
+  padding: 60rpx 0;
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* left: 0; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.btnGroup button{
+  background-color: #DAA520;
+}
+.extCell{
+  background-color: #222; 
+  color: #ccc; 
+}
+.darkInput{
+  color: #ccc;
+}

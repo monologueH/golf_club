@@ -1,0 +1,25 @@
+<!--components/gameRulePanel/gameRulePanel.wxml-->
+<view class="rulePanel">
+  <!-- <view class="rowTitle">规则选择</view> -->
+  <view class="ruleSelect">
+    <mp-cell>
+      <view>玩法</view>
+      <picker slot="footer" range="{{rules}}" range-key="name" data-name="currentCheckedIndex" mode="selector" bindchange="bindFormChange">
+        <input slot="footer" type="text" placeholder="请选择玩法" disabled='true' style="color:#d2a641;" value="{{rules[currentCheckedIndex].name}}"></input>
+      </picker>
+    </mp-cell>
+  </view>
+  <!-- <view class="rowTitle">规则配置</view> -->
+
+  <view class="ruleSetup">
+    <mp-cell wx:if="{{currentCheckedIndex === 1}}">
+      <view>分组方式</view>
+      <picker slot="footer" range="{{groupTypes}}" range-key="name" data-name="groupType" mode="selector" bindchange="bindFormChange">
+        <input slot="footer" type="text" placeholder="请选择玩法" disabled='true' style="color:#d2a641;" value="{{groupTypes[groupType].name}}"></input>
+      </picker>
+    </mp-cell>
+  </view>
+  <view class="btnGroup">
+    <button style="width:90%;" bindtap="saveRule"> 保存设置 </button>
+  </view>
+</view>

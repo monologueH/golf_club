@@ -30,8 +30,10 @@ export function getMsgList(payload) {
 }
 export function sendMsg(payload){
   return baseRequest("/golf/g-message/saveMessage", payload, "POST");
-  
 }
 export function getAllScore(payload) {
   return baseRequest("/golf/g-game-group-user-score/getScoreList", payload, "GET");
+}
+export function setGameRule(payload) {
+  return baseRequest("/golf/g-play/create", payload, "POST");
 }

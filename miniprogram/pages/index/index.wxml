@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <image mode="widthFix" class="homeBg" src="/assets/image/homeBg.png"></image>
+  <image mode="widthFix" class="homeBg" src="/assets/image/homeBg2.png"></image>
   <view class="homeContent">
     <view class="messageBox">
       <view class="msgWrap" animation="{{textLeftAnimation}}">
