@@ -1,0 +1,12 @@
+/* miniprogram/pages/photoAlbum/photoAlbum.wxss */
+.page{
+  /* background-color: rgba(0, 0, 0, 0.7); */
+}
+.weui-cells{
+  background-color: rgba(255, 255, 255, 0); 
+  color: #fff;
+  /* min-height: 1110rpx; */
+}
+.weui-uploader__input-box{
+background-color: rgba(255, 255, 255, 0.15) !important; 
+}

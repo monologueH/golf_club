@@ -25,7 +25,7 @@
           <view>最近比赛</view>
         </view>
       </view>
-      <view class="entranceColumn column2">
+      <view class="entranceColumn column2"  bindtap="jumpPage" data-url="/pages/photoAlbum/photoAlbum">
         <view class="entranceItem">
           <image src="/assets/image/album.png"></image>
           <view>相册</view>

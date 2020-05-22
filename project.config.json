@@ -59,7 +59,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -122,6 +122,12 @@
 					"name": "pages/sendMsg/sendMsg",
 					"pathName": "pages/sendMsg/sendMsg",
 					"query": "name=username",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/photoAlbum/photoAlbum",
+					"pathName": "pages/photoAlbum/photoAlbum",
 					"scene": null
 				}
 			]

@@ -13,7 +13,8 @@
     "pages/myInfo/myInfo",
     "pages/editMy/editMy",
     "components/allScorePanel/allScorePanel",
-    "pages/sendMsg/sendMsg"
+    "pages/sendMsg/sendMsg",
+    "pages/photoAlbum/photoAlbum"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -46,5 +47,11 @@
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
-  }
+  },
+  
+    "useExtendedLib": {
+      "kbone": true,
+      "weui": true
+    }
+  
 }

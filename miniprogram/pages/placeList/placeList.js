@@ -62,7 +62,7 @@ Page({
   getPlaceList(){
     getPlaceList().then(res=>{
       const placeList = res.data;
-      console.log(placeList)
+      // console.log(placeList)
       this.setData({
         placeList,
         placeDetail:res.data[0].pOtherDetail.placeList

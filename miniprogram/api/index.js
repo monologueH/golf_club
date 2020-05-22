@@ -1,10 +1,11 @@
 import request from "../utils/request.js";
 
-function baseRequest(path, payload, method) {
+function baseRequest(path, payload, method, header = {}) {
   return request({
     url: `${path}`,
     method,
-    data: payload
+    data: payload,
+    header
   });
 }
 export function getAuth(payload) {
@@ -36,4 +37,7 @@ export function getAllScore(payload) {
 }
 export function setGameRule(payload) {
   return baseRequest("/golf/g-play/create", payload, "POST");
+}
+export function upload(payload,header) {
+  return baseRequest("/golf/image/uploadImg", payload, "POST",header);
 }
