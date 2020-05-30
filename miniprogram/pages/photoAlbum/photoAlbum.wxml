@@ -1,0 +1,9 @@
+<view class="page albumPage">
+    <view class="page__bd ">
+        <mp-cells>
+            <mp-cell>
+                <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess"  upload="{{uplaodFile}}" files="{{files}}" max-count="5" bindselect="select"  ></mp-uploader>
+            </mp-cell>
+        </mp-cells>
+    </view>
+</view>

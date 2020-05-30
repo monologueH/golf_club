@@ -1,6 +1,6 @@
 import request from "../utils/request.js";
 
-function baseRequest(path, payload, method,header={}) {
+function baseRequest(path, payload, method, header = {}) {
   return request({
     url: `${path}`,
     method,
@@ -41,4 +41,7 @@ export function setGameRule(payload) {
 }
 export function queryGameRule(payload) {
   return baseRequest("/golf/g-play/find", payload, "GET");
+}
+export function upload(payload,header) {
+  return baseRequest("/golf/image/uploadImg", payload, "POST",header);
 }
