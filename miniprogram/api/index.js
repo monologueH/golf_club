@@ -1,12 +1,14 @@
 import request from "../utils/request.js";
 
-function baseRequest(path, payload, method) {
+function baseRequest(path, payload, method,header={}) {
   return request({
     url: `${path}`,
     method,
-    data: payload
+    data: payload,
+    header
   });
 }
+
 export function getAuth(payload) {
   return baseRequest("/golf/weixin/auth", payload, "POST");
 }
@@ -36,4 +38,7 @@ export function getAllScore(payload) {
 }
 export function setGameRule(payload) {
   return baseRequest("/golf/g-play/create", payload, "POST");
+}
+export function queryGameRule(payload) {
+  return baseRequest("/golf/g-play/find", payload, "GET");
 }

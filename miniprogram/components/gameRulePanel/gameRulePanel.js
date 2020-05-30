@@ -1,5 +1,5 @@
 // components/gameRulePanel/gameRulePanel.js
-import { setGameRule } from '../../api/index.js'
+import { setGameRule, queryGameRule } from '../../api/index.js'
 
 Component({
   /**
@@ -50,6 +50,11 @@ Component({
         pGroupType: 1
       })
     },
+    queryGameRule(){
+      queryGameRule({
+        gNo: this.data.gNo
+      })
+    },
     bindFormChange(e){
       console.log(e.detail.value)
       const { name } = e.currentTarget.dataset
@@ -57,5 +62,11 @@ Component({
         [name]: parseInt(e.detail.value)
       })
     }
-  }
+  },
+  lifetimes: {
+    // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
+    ready: function () {
+      this.queryGameRule();
+    },
+  },
 })
