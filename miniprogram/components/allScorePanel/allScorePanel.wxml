@@ -6,15 +6,41 @@
       <view class="content1">用户名</view>
       <view class="content2">标准杆</view>
     </view>
-    <view class="scoreTitleItem" wx:for="{{scoreInfo[0].scoreVoListNew}}">
+    <view class="{{pType === 0 ? 'scoreTitleItem':'scoreTitleItem2'}}" wx:for="{{scoreInfo[0].scoreVoListNew}}">
       <view>第{{index + 1}}洞</view>
       <view>{{item.num}}</view>
     </view>
   </view>
-  <view class="userColumn" wx:for="{{scoreInfo}}" wx:for-item="user" wx:for-item="user">
+  <view class="userColumn" wx:if="{{pType === 0}}" wx:for="{{scoreInfo}}" wx:for-item="user" wx:for-index="index">
     <view class="userName">{{user.userRes.mName}}</view>
     <view class="scoreItem {{item.gs > item.num?'bad':''}} {{item.gs < item.num && item.gs!== 0?'good':''}}" wx:for="{{user.scoreVoListNew}}">
       {{item.gs}}
+      <view wx:if="{{item.joyGroup}}" style="border-right-color:{{colorMap[GROUP_MAP[item.joyGroup]]}};border-top-color:{{colorMap[GROUP_MAP[item.joyGroup]]}};" class="'groupTag1'"></view>
+    </view>
+  </view>
+  <view class="userColumn2" wx:if="{{pType === 1 || pType === 2}}" wx:for="{{scoreInfo}}" wx:for-item="user" wx:for-idex="index">
+    <view class="userName">{{user.userRes.mName}}</view>
+    <view class="scoreItem2 {{item.gs > item.num?'bad':''}} {{item.gs < item.num && item.gs!== 0?'good':''}}" wx:for="{{user.scoreVoListNew}}">
+      <view class="gs">本洞：{{item.gs}}</view>
+      <view class="joyScore">玩法：{{item.joyScore}}</view>
+      <view wx:if="{{item.joyGroup}}" style="border-right-color:{{colorMap[GROUP_MAP[item.joyGroup]]}};border-top-color:{{colorMap[GROUP_MAP[item.joyGroup]]}};" class="'groupTag1'"></view>
+    </view>
+  </view>
+  <view class="userColumn3" wx:if="{{pType === 1 || pType === 2}}">
+    <view class="userName">合计：</view>
+    <view class="scoreItem3" wx:for="{{holeScoreList}}">
+      <view class="groupItem" style="color:{{colorMap[GROUP_MAP[index]]}};" wx:for="{{item}}" wx:for-item="groupScore" wx:for-idex="groupName">
+        <view class="gs">本洞：{{groupScore.gs}}</view>
+        <view class="joyScore">玩法：{{groupScore.joyScore}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="userColumn4" wx:if="{{pType === 0}}">
+    <view class="userName">合计：</view>
+    <view class="scoreItem4" wx:for="{{holeScoreList}}">
+      <view class="groupItem" style="color:{{colorMap[GROUP_MAP[index]]}};" wx:for="{{item}}" wx:for-item="groupScore" wx:for-idex="groupName">
+        <view class="gs">{{groupScore.gs}}</view>
+      </view>
     </view>
   </view>
 </view>

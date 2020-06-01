@@ -16,9 +16,10 @@ Page({
     },
     dateToday: new Date().toLocaleDateString().replace(/\//g, "-"),
     placeInfo:{},
+    gGroupNames:['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
     groupList:[
       {
-        ggName:'小组 1',
+        ggName:'A',
         mNoList:[]
       }
     ],
@@ -111,7 +112,7 @@ Page({
   addGroup(){
     const groupList = this.data.groupList;
     groupList.push({
-      ggName:`小组 ${groupList.length + 1}`,
+      ggName:this.data.gGroupNames[groupList.length],
       mNoList: []
     })
     this.setData({

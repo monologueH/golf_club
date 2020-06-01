@@ -18,7 +18,8 @@ Component({
   data: {
     rules: [
       { value: 0, name: '普通' },
-      { value: 1, name: '顶级8421' },
+      { value: 1, name: '普通8421' },
+      { value: 2, name: '顶级8421' },
     ],
     groupTypes: [
       { value: 0, name: '根据前洞分组' },
@@ -39,20 +40,24 @@ Component({
       })
     },
     saveRule(){
-      console.log({
-        gNo: this.data.gNo,
-        pType: 0,
-        pGroupType: 1
-      })
       setGameRule({
         gNo: this.data.gNo,
-        pType: 0,
-        pGroupType: 1
+        pType: this.data.rules[this.data.currentCheckedIndex].value,
+        pGroupType: this.data.groupTypes[this.data.groupType].value
       })
     },
-    queryGameRule(){
-      queryGameRule({
+    async queryGameRule(){
+      const {data} = await queryGameRule({
         gNo: this.data.gNo
+      })
+      const {pType, pGroupType} = data;
+      const currentCheckedIndex = this.data.rules.findIndex(item=>item.value === pType);
+      const groupType = this.data.groupTypes.findIndex(item=>item.value === pGroupType);
+      console.log(data,pType, pGroupType,currentCheckedIndex,
+        groupType)
+      this.setData({
+        currentCheckedIndex,
+        groupType
       })
     },
     bindFormChange(e){

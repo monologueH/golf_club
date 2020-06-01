@@ -41,3 +41,6 @@
 .darkInput{
   color: #ccc;
 }
+.picker{
+  font-size: 28rpx;
+}

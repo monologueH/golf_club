@@ -74,7 +74,7 @@
 					"id": 1,
 					"name": "pages/score/score",
 					"pathName": "pages/score/score",
-					"query": "gno=03G1Z6gJzw8PqHUE03lW4yPfm9T1Yf4A",
+					"query": "gno=qxksHaIDm9MZfriRSbz75Hb7BXhu82J5",
 					"scene": null
 				},
 				{
@@ -130,6 +130,14 @@
 					"id": -1,
 					"name": "pages/photoAlbum/photoAlbum",
 					"pathName": "pages/photoAlbum/photoAlbum",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/photoAlbum/photoAlbum",
+					"pathName": "pages/photoAlbum/photoAlbum",
+					"query": "gno=DWCgJa7UklNPH5eZxQgQhbP63aFBCpJY",
 					"scene": null
 				}
 			]

@@ -19,6 +19,7 @@ Page({
   async getMsg(){
     const {data} = await getMsgList()
     console.log(data)
+    if(!data)return;
     this.setData({
       infoList: data.slice((data.length - 2) > 0 ? (data.length - 2):0,data.length)
     })

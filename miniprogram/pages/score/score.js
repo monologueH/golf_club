@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTabIndex: 2,
+    currentTabIndex: 1,
     tabList: [
       { name: '计分', value: 'myScore' },
       { name: '所有成绩', value: 'allScore' },

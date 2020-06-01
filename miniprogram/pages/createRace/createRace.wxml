@@ -31,7 +31,7 @@
     </mp-cell>
     <mp-slideview bindbuttontap="bindbuttontap" data-index="{{groupIndex}}" ext-class="attendPlayer" buttons="{{buttons}}" wx:for="{{groupList}}" wx:for-item="group" wx:for-index="groupIndex">
       <view class="slideContent">
-        <view>{{group.ggName}}</view>
+        <view>小组{{group.ggName}}</view>
         <view class="playerWrap">
           <view class="playerItem" wx:for="1234">
             <view bindtap="addPlayer" data-index="{{groupIndex}}" class="imageWrap" wx:if="{{group.mNoList[index]}}">

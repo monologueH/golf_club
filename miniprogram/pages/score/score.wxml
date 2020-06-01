@@ -20,7 +20,7 @@
   </view>
 </view>
 <view wx:if="{{currentTabIndex === 1}}" class="AllScorePanel">
-  <allScorePanel gNo="{{gNo}}"></allScorePanel>
+  <allScorePanel gNo="{{gNo}}" gameDetail="{{gameDetail}}"></allScorePanel>
 </view>
 <view wx:if="{{currentTabIndex === 2}}" class="AllScorePanel">
   <gameRulePanel gNo="{{gNo}}"></gameRulePanel>

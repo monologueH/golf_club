@@ -1,18 +1,14 @@
 // miniprogram/pages/photoAlbum/photoAlbum.js
-import { upload } from '../../api/index.js'
+import {
+  upload
+} from '../../api/index.js'
+import config from "../../utils/config";
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    files: [{
-      url: '',
-    }, {
-      loading: false
-    }, {
-      error: false
-    }]
+    files: []
   },
   /**
    * 生命周期函数--监听页面加载
@@ -21,6 +17,10 @@ Page({
     // this.setData({
     //   selectFile: this.selectFile.bind(this)
     // })
+    this.setData({
+      selectFile: this.selectFile.bind(this),
+      uplaodFile: this.uplaodFile.bind(this)
+  })
   },
 
   /**
@@ -56,22 +56,22 @@ Page({
       urls: this.data.files // 需要预览的图片http链接列表
     })
   },
-  select(e){
+  selectFile(e) {
     console.log(e.detail.contents)
-  
-   let header = {
-      'Content-Type': 'multipart/form-data; boundary=XXX'
-}
-    var formData = '\r\n--XXX' +
-      '\r\nContent-Disposition: form-data; name="file"' +
-      '\r\n' +
-      '\r\n' + e.detail.contents +
-      '\r\n--XXX'
-   
-    upload(formData,header).then(res => {
-      console.log(res)
 
-    })
+    // let header = {
+    //   'Content-Type': 'multipart/form-data; boundary=XXX'
+    // }
+    // var formData = '\r\n--XXX' +
+    //   '\r\nContent-Disposition: form-data; name="file"' +
+    //   '\r\n' +
+    //   '\r\n' + e.detail.contents +
+    //   '\r\n--XXX'
+
+    // upload(formData, header).then(res => {
+    //   console.log(res)
+
+    // })
   },
   // selectFile(files) {
   //   console.log('files', files)
@@ -81,14 +81,31 @@ Page({
 
   //   // })
   // },
-  uplaodFile(files) {
-    console.log('upload files', files)
+  uplaodFile(e) {
     // 文件上传的函数，返回一个promise
-  upload().then(res=>{
-    console.log(res)
-
-  })
-    
+    return new Promise((resolve, reject) => {
+      const token = wx.getStorageSync("token");
+      console.log('upload e', e.tempFilePaths[0])
+      wx.uploadFile({
+        url: `${config.BASE_URL}/golf/g-user-media/saveGUserMedia`,
+        filePath:e.tempFilePaths[0],
+        name: "file",
+        formData: {},
+        header: {
+          Authorization: "Bearer " + token
+        },
+        success(res) {
+          const {data} = res;
+          const {data:{pcontent}} = JSON.parse(data);
+          resolve({urls:[pcontent]});
+          //do something
+        },
+        fail(err) {
+          console.log(err)
+          reject(err);
+        }
+      });
+    })
   },
   uploadError(e) {
     console.log('upload error', e.detail)

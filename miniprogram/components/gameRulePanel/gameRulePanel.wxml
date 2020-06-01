@@ -12,9 +12,9 @@
   <!-- <view class="rowTitle">规则配置</view> -->
 
   <view class="ruleSetup">
-    <mp-cell wx:if="{{currentCheckedIndex === 1}}">
+    <mp-cell wx:if="{{currentCheckedIndex === 1 || currentCheckedIndex === 2}}">
       <view>分组方式</view>
-      <picker slot="footer" range="{{groupTypes}}" range-key="name" data-name="groupType" mode="selector" bindchange="bindFormChange">
+      <picker class="picker" slot="footer" range="{{groupTypes}}" range-key="name" data-name="groupType" mode="selector" bindchange="bindFormChange">
         <input slot="footer" type="text" placeholder="请选择玩法" disabled='true' style="color:#d2a641;" value="{{groupTypes[groupType].name}}"></input>
       </picker>
     </mp-cell>

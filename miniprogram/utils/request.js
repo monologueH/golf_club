@@ -6,7 +6,6 @@ function request(reqParam) {
   const app = getApp();
   const TOKEN = wx.getStorageSync("token") || "";
   const APP_CODE = app.globalData.appCode || "";
-  console.log("APP_CODE", APP_CODE);
   let HEADER = {};
   // 身份验证token
   if (TOKEN) {
