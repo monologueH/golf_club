@@ -8,5 +8,61 @@
   /* min-height: 1110rpx; */
 }
 .weui-uploader__input-box{
-background-color: rgba(255, 255, 255, 0.15) !important; 
+  background-color: rgba(255, 255, 255, 0.15) !important; 
+  width: 190rpx!important;
+  height: 190rpx!important;
+  margin-right: 10px!important;
+}
+
+.weui-uploader__hd{
+  display: none;
+}
+.albumList{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding:0 7.5rpx;
+  box-sizing: border-box;
+  max-height: 100vh;
+}
+
+.albumItem{
+  width: 235rpx;
+  height: 235rpx;
+  margin-top: 15rpx;
+  margin-right: 15rpx;
+}
+.albumItem:nth-child(3n){
+  margin-right: 0rpx;
+}
+.albumItem image{
+  max-width: 100%;
+  max-height: 100%;
+}
+.uploader{
+  color: #aaa;
+  font-size: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.15); 
+  position: relative;
+}
+.uploader::after{
+  content: ' ';
+  width: 64rpx;
+  height: 4rpx;
+}
+.uploader::before{
+  content: ' ';
+  height: 64rpx;
+  width: 4rpx;
+}
+.uploader::after,.uploader::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #A3A3A3;
 }

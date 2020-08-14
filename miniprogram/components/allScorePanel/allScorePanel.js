@@ -49,6 +49,7 @@ Component({
   methods: {
     calcTotalScore(result){
       const holeNum = this.data.gameDetail.gPlaceInfoJSON.groundList.length * 8;
+      console.log(holeNum)
       const scoreInfo = result.map(item=>item.scoreVoListNew);
       console.log(scoreInfo);
       const holeScoreList = scoreInfo[0].map((item,index)=>{
@@ -67,7 +68,6 @@ Component({
               }
             }
           })
-          console.log(score)
         })
         return score;
       })

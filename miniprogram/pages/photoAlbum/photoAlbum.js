@@ -1,6 +1,7 @@
 // miniprogram/pages/photoAlbum/photoAlbum.js
 import {
-  upload
+  upload,
+  albumImgs
 } from '../../api/index.js'
 import config from "../../utils/config";
 Page({
@@ -8,7 +9,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    files: []
+    files: [],
+    pageParams: {
+      pageNum: 1,
+      pageSize: 20
+    },
+    imgList: [],
+    listFinished:false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -17,10 +24,11 @@ Page({
     // this.setData({
     //   selectFile: this.selectFile.bind(this)
     // })
+    this.getImgList();
     this.setData({
       selectFile: this.selectFile.bind(this),
       uplaodFile: this.uplaodFile.bind(this)
-  })
+    })
   },
 
   /**
@@ -56,22 +64,32 @@ Page({
       urls: this.data.files // 需要预览的图片http链接列表
     })
   },
+  onScrollToBottom(e){
+    this.setData({
+      ['pageParams.pageSize']:this.data.pageParams.pageSize + 20
+    })
+    console.log(this.data.listFinished)
+    if(!this.data.listFinished){
+      this.getImgList()
+    }
+  },
   selectFile(e) {
     console.log(e.detail.contents)
-
-    // let header = {
-    //   'Content-Type': 'multipart/form-data; boundary=XXX'
-    // }
-    // var formData = '\r\n--XXX' +
-    //   '\r\nContent-Disposition: form-data; name="file"' +
-    //   '\r\n' +
-    //   '\r\n' + e.detail.contents +
-    //   '\r\n--XXX'
-
-    // upload(formData, header).then(res => {
-    //   console.log(res)
-
-    // })
+  },
+  async getImgList() {
+    const {
+      data
+    } = await albumImgs(this.data.pageParams)
+    if(data.records.length === this.data.imgList.length){
+      this.setData({
+        listFinished:true
+      })
+      return
+    }
+    this.setData({
+      imgList: data.records,
+      files:data.records.map(item=>item.pcontent)
+    })
   },
   // selectFile(files) {
   //   console.log('files', files)
@@ -81,37 +99,55 @@ Page({
 
   //   // })
   // },
+  chooseImage() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        this.uplaodFile(res)
+      }
+    })
+  },
   uplaodFile(e) {
     // 文件上传的函数，返回一个promise
-    return new Promise((resolve, reject) => {
-      const token = wx.getStorageSync("token");
-      console.log('upload e', e.tempFilePaths[0])
-      wx.uploadFile({
-        url: `${config.BASE_URL}/golf/g-user-media/saveGUserMedia`,
-        filePath:e.tempFilePaths[0],
-        name: "file",
-        formData: {},
-        header: {
-          Authorization: "Bearer " + token
-        },
-        success(res) {
-          const {data} = res;
-          const {data:{pcontent}} = JSON.parse(data);
-          resolve({urls:[pcontent]});
-          //do something
-        },
-        fail(err) {
-          console.log(err)
-          reject(err);
-        }
-      });
-    })
+    const token = wx.getStorageSync("token");
+    console.log('upload e', e.tempFilePaths[0])
+    wx.uploadFile({
+      url: `${config.BASE_URL}/golf/g-user-media/saveGUserMedia`,
+      filePath: e.tempFilePaths[0],
+      name: "file",
+      formData: {},
+      header: {
+        Authorization: "Bearer " + token
+      },
+      success:(res)=> {
+        const {
+          data
+        } = res;
+        const {
+          data: {
+            pcontent
+          }
+        } = JSON.parse(data);
+        this.getImgList()
+        //do something
+      },
+      fail(err) {
+        console.log(err)
+      }
+    });
   },
   uploadError(e) {
     console.log('upload error', e.detail)
   },
   uploadSuccess(e) {
     console.log('upload success', e.detail)
+    this.setData({
+      files: []
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

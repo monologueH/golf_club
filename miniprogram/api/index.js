@@ -45,3 +45,6 @@ export function queryGameRule(payload) {
 export function upload(payload,header) {
   return baseRequest("/golf/g-user-media/saveGUserMedia", payload, "POST",header);
 }
+export function albumImgs(payload,header) {
+  return baseRequest("/golf/g-user-media/getPhotoList", payload, "GET",header);
+}

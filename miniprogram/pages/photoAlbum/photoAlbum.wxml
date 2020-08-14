@@ -1,3 +1,9 @@
 <view class="page">
-	<mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" upload="{{uplaodFile}}" files="{{files}}" max-count="5" bindselect="select"></mp-uploader>
-</view>
+	<!-- <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" upload="{{uplaodFile}}" files="{{files}}" bindselect="select"></mp-uploader> -->
+	<scroll-view bindscrolltolower="onScrollToBottom" scroll-y="true" enable-flex="true" class="albumList">
+		<view class="albumItem uploader" bindtap="chooseImage"></view>
+		<view class="albumItem" wx:for="{{imgList}}">
+			<image id="{{index}}" mode="aspectFill" bindtap="previewImage" src="{{item.pcontent}}"></image>
+		</view>
+	</scroll-view>
+</view> 
